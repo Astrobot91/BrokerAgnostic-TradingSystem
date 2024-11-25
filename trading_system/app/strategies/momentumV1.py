@@ -210,7 +210,7 @@ class MomentumStrategyV1:
             
             if not futures_slice.is_empty():
                 self.logger.info(f'Futures contracts generated today: {futures_slice}')
-                telegram_msg = f'Signals for : {(SIGNAL_DATE + timedelta(days=1))} 09:15:00\n\n'
+                telegram_msg = f'Signals for : {(SIGNAL_DATE + timedelta(days=1)).replace(hour=9, minute=15, second=0)}\n\n'
                 i = 1
                 column_names = futures_slice.columns
                 for row in futures_slice.rows():
