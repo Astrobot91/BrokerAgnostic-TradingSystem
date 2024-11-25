@@ -5,11 +5,11 @@ class StrategyLoader:
     def __init__(self):
         self.strategies = {}
 
-    def load_strategy(self, strategy_name: str, log_retention_days: int = 7):
+    def load_strategy(self, strategy_name: str):
         try:
             module = importlib.import_module(f"app.strategies.{strategy_name}")
             strategy_class = getattr(module, strategy_name)
-            strategy_instance = strategy_class(strategy_name, log_retention_days)
+            strategy_instance = strategy_class(strategy_name)
             self.strategies[strategy_name] = strategy_instance
             return strategy_instance
         except (ModuleNotFoundError, AttributeError) as e:

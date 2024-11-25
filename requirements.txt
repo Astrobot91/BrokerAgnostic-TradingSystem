@@ -22,3 +22,4 @@ aiohttp
 beautifulsoup4
 tortoise-orm
 pytz
+apscheduler
