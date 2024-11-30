@@ -16,7 +16,7 @@ from app.config import STRATEGY_CONFIGS
 ist = ZoneInfo('Asia/Kolkata')
 POSITION_ID = randint(10000000, 99999999)
 CURRENT_TIME = datetime.now(ist)
-MARKET_OPENING_TIME = datetime.today().replace(hour=9, minute=15, second=1, microsecond=0).astimezone(ist)
+MARKET_OPENING_TIME = datetime.today().replace(hour=3, minute=45, second=1, microsecond=0).astimezone(ist)
 SIGNAL_DATE = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
 class MomentumStrategyV1:
@@ -100,6 +100,7 @@ class MomentumStrategyV1:
                 
                 if qualified_futures.is_empty():
                     self.logger.info("No qualified futures contracts to trade.")
+                    await self.trade_executor.remove_access_token()
                     return
                 self.logger.info(f"Qualified futures contracts: {qualified_futures}")
                 
@@ -155,7 +156,7 @@ class MomentumStrategyV1:
                     from_date=str(from_date),
                     to_date=str(to_date)
                 )
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(0.25)
 
                 if hist_stock_df.is_empty():
                     self.logger.warning(f"No historical data for symbol: {trading_symbol}")
@@ -192,9 +193,9 @@ class MomentumStrategyV1:
         """
         try:
             signals = await self.generate_signals()
-            if signals is None:
-                self.logger.info('No signals generated today.')
-                return None
+            if signals.is_empty():
+                return (pl.DataFrame(data={}, strict=False), None)
+            
             list_of_qualified_stocks = signals['trading_symbol'].to_list()
             master_file_slice = self.instrument_df.filter(
                 (pl.col('instrument_type') == 'FUT') &

@@ -6,7 +6,7 @@ from logging.handlers import RotatingFileHandler
 import apscheduler
 
 
-DEFAULT_LOG_HANDLER = '/home/admin/Strategy_Execution_Engine/trading_system/app/logs'
+DEFAULT_LOG_HANDLER = '/home/admin/StrategyExecutionEngine/trading_system/app/logs'
 
 
 class DailyFileHandler(logging.FileHandler):

@@ -1007,11 +1007,12 @@ class UpstoxBroker(BaseBroker):
                         hist_response = await response.json()
                         if hist_response.get('status') == 'success':
                             if 'data' in hist_response:
+                                
                                 data = await self._convert_to_polars_df(data=hist_response['data'],
                                                                         exchange_token=exchange_token,
                                                                         interval=interval,
                                                                         from_date=from_date,
-                                                                        to_date=to_date)                           
+                                                                        to_date=to_date)
                                 self.logger.info(f'Historical data for: {exchange_token} from: {from_date} to: {to_date} retrieved.')
                                 return data
                             else:
