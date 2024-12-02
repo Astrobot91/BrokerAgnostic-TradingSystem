@@ -1,8 +1,7 @@
-import os
+import time
 import asyncio
 import polars as pl
 from zoneinfo import ZoneInfo
-from random import randint
 from datetime import datetime, date, timedelta
 from app.utils.logger import get_logger
 from app.utils.telegram import broadcast_signal
@@ -16,7 +15,7 @@ from app.config import STRATEGY_CONFIGS
 
 
 ist = ZoneInfo('Asia/Kolkata')
-POSITION_ID = randint(10000000, 99999999)
+POSITION_ID = int(time.time())
 CURRENT_TIME = datetime.now(ist)
 MARKET_OPENING_TIME = datetime.today().replace(hour=3, minute=45, second=1, microsecond=0).astimezone(ist)
 SIGNAL_DATE = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)

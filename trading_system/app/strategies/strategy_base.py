@@ -11,9 +11,8 @@ class BaseStrategy(ABC):
         """
         Initialize the strategy with a name and broker instance.
 
-        :param strategy_name: Name of the strategy.
-        :param broker: Broker instance to execute trades.
-        :param kwargs: Additional parameters specific to the strategy.
+        :param broker_name: Broker name (Upstox, Zerodha, etc).
+        :param account_name: Account name linked to the broker.
         """
         self.broker_name = broker_name
         self.account_name = account_name
