@@ -1,10 +1,10 @@
 import json
 import gzip
+import logging
 import aiohttp
 import polars as pl
 from io import BytesIO
 from datetime import datetime, timedelta
-from app.utils.logger import get_logger
 from app.brokers.base_broker import BaseBroker
 from app.authentication.upstox_authenticator import UpstoxAuthenticator
 from typing import List, Dict, Any
@@ -15,15 +15,11 @@ class UpstoxBroker(BaseBroker):
     BASE_URL = "https://api.upstox.com/v2"
     BASE_ORDER_URL = "https://api-hft.upstox.com/v2"
 
-    def __init__(self, account_name: str):
+    def __init__(self, account_name: str, logger: logging.Logger):
         self.account_name = account_name
         self.broker_name = 'Upstox'
-        self.logger = get_logger(
-            main_folder_name=f'Brokers/UpstoxBroker/Accounts/{self.account_name}',
-            broker_name=self.broker_name,
-            account_name=f'{self.account_name}'
-        )
-        self.authenticator = UpstoxAuthenticator(account_name=self.account_name)
+        self.logger = logger
+        self.authenticator = UpstoxAuthenticator(account_name=self.account_name, logger=self.logger)
         self.access_token = None
     
     async def initialize(self):

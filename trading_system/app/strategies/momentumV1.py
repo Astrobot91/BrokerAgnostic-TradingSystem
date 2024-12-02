@@ -7,6 +7,7 @@ from datetime import datetime, date, timedelta
 from app.utils.logger import get_logger
 from app.utils.telegram import broadcast_signal
 from app.risk.risk_manager import RiskManager
+from app.brokers.broker_factory import BrokerFactory
 from app.execution.trade_executor import TradeExecutor
 from app.portfolio.portfolio_manager import PortfolioManager
 from app.data.datafeed import BrokerDataFeed, FundamentalDataFeed
@@ -34,7 +35,7 @@ class MomentumStrategyV1:
         self.executor_broker_name = executor_broker_name
         self.executor_account_name = executor_account_name
         self.logger = get_logger(
-            main_folder_name=f'Strategies/{self.strategy_name}',
+            main_folder_name=f'Brokers/{self.executor_broker_name}/Accounts/{self.executor_account_name}/Strategies/{self.strategy_name}',
             broker_name=self.executor_broker_name,
             account_name=self.executor_account_name
         )
@@ -49,37 +50,27 @@ class MomentumStrategyV1:
 
     async def initialize(self) -> None:
         try:
-            self.fundamental_datafeed = FundamentalDataFeed()
-            self.brokerdatafeed = BrokerDataFeed(
-                broker_name=self.datafeed_broker_name,
-                account_name=self.datafeed_account_name
-            )
-            await self.brokerdatafeed.initialize() 
+            self.datafeed_broker = BrokerFactory.get_broker(broker_name=self.datafeed_broker_name,
+                                                            account_name=self.datafeed_account_name,
+                                                            logger=self.logger)
+            self.executor_broker = BrokerFactory.get_broker(broker_name=self.executor_broker_name,
+                                                            account_name=self.executor_account_name,
+                                                            logger=self.logger)
+            await self.datafeed_broker.initialize()
+            await self.executor_broker.initialize()
 
-            self.trade_executor = TradeExecutor(
-                strategy_name=self.strategy_name,
-                broker_name=self.executor_broker_name,
-                account_name=self.executor_account_name
-            )
-            await self.trade_executor.initialize()
-
-            self.portfolio_manager = PortfolioManager(
-                broker_name=self.executor_broker_name,
-                account_name=self.executor_account_name,
-                strategy_name=self.strategy_name
-            )
-            await self.portfolio_manager.initialize()
-
-            self.risk_manager = RiskManager(
-                strategy_name=self.strategy_name,
-                broker_name=self.executor_broker_name,
-                account_name=self.executor_account_name
-            )
-            await self.risk_manager.initialize()
-
+            self.fundamental_datafeed = FundamentalDataFeed(broker=self.datafeed_broker)
+            self.brokerdatafeed = BrokerDataFeed(broker=self.datafeed_broker)
+            self.trade_executor = TradeExecutor(broker=self.executor_broker)
+            self.portfolio_manager = PortfolioManager(broker=self.executor_broker,
+                                                      broker_name=self.executor_broker_name,
+                                                      account_name=self.executor_account_name,
+                                                      strategy_name=self.strategy_name)
+            
+            self.risk_manager = RiskManager(broker=self.executor_broker)
             self.instrument_df = self.brokerdatafeed.broker.instrument_df
-
             self.logger.info("MomentumStrategyV1 initialized successfully.")
+        
         except Exception as e:
             error_msg = (f'Failed to initialize {self.strategy_name} for broker: {self.executor_broker_name}, '
                          f'account: {self.executor_account_name}. Error: {e}')
@@ -106,7 +97,7 @@ class MomentumStrategyV1:
                 
                 exit_date = await self._get_exit_date(entry_date=SIGNAL_DATE + timedelta(days=1))
                 if exit_date.date() <= nearest_expiry.date():
-                    await self._save_new_positions(qualified_futures, no_of_open_positions, nearest_expiry)
+                    await self._save_new_positions(qualified_futures, no_of_open_positions)
                 else:
                     self.logger.info(f'Cannot save new positions as expiry is under holding period.')
 
@@ -301,10 +292,10 @@ class MomentumStrategyV1:
                 for position in execute_positions:
                     if position.get('tag').endswith('EXIT'):
                         status = 'closed'
-                        order_is_valid = await self.risk_manager.validate_order(exchange_token=position['exchange_token'],
-                                                                                transaction_type=position['exit_transaction_type'],
-                                                                                quantity=position['quantity'],
-                                                                                product=position['product'])
+                        order_is_valid, exit_margin, exit_brokerage = await self.risk_manager.validate_order(exchange_token=position['exchange_token'],
+                                                                                                            transaction_type=position['exit_transaction_type'],
+                                                                                                            quantity=position['quantity'],
+                                                                                                            product=position['product'])
                         if order_is_valid:
                             order_response = await self.trade_executor.place_order(exchange_token=position['exchange_token'],
                                                                                 transaction_type=position['exit_transaction_type'],
@@ -315,19 +306,7 @@ class MomentumStrategyV1:
                                                                                 tag=position['tag'])
                             
                             order_details = await self.trade_executor.get_order_details(order_id=order_response['order_id'])
-                            await self.trade_executor.save_order(order_details=order_details)
-                            
-                            exit_margin = await self.trade_executor.calculate_margin(exchange_token=position['exchange_token'],
-                                                                                     quantity=position['quantity'],
-                                                                                     product=position['product'],
-                                                                                     transaction_type=position['exit_transaction_type'],
-                                                                                     price=order_details['price'])
-
-                            exit_brokerage = await self.trade_executor.calculate_brokerage(exchange_token=position['exchange_token'],
-                                                                                        quantity=position['quantity'],
-                                                                                        product=position['product'],
-                                                                                        transaction_type=position['exit_transaction_type'],
-                                                                                        price=order_details['price'])                     
+                            await self.trade_executor.save_order(order_details=order_details)                 
                             
                             pnl = exit_margin - (position['entry_margin'] + exit_brokerage + position['entry_brokerage'])
                             await self.portfolio_manager.update_position(tag=position['tag'],
@@ -348,10 +327,10 @@ class MomentumStrategyV1:
                 for position in execute_positions:
                     if position.get('tag').endswith('ENTRY'):
                         status = 'open'
-                        order_is_valid = await self.risk_manager.validate_order(exchange_token=position['exchange_token'],
-                                                                                transaction_type=position['entry_transaction_type'],
-                                                                                quantity=position['quantity'],
-                                                                                product=position['product'])
+                        order_is_valid, entry_margin, entry_brokerage = await self.risk_manager.validate_order(exchange_token=position['exchange_token'],
+                                                                                                            transaction_type=position['entry_transaction_type'],
+                                                                                                            quantity=position['quantity'],
+                                                                                                            product=position['product'])
                         if order_is_valid:
                             order_response = await self.trade_executor.place_order(exchange_token=position['exchange_token'],
                                                                                 transaction_type=position['entry_transaction_type'],
@@ -362,19 +341,7 @@ class MomentumStrategyV1:
                                                                                 tag=position['tag'])
                             
                             order_details = await self.trade_executor.get_order_details(order_id=order_response['order_id'])
-                            await self.trade_executor.save_order(order_details=order_details)
-                            
-                            exit_margin = await self.trade_executor.calculate_margin(exchange_token=position['exchange_token'],
-                                                                                     quantity=position['quantity'],
-                                                                                     product=position['product'],
-                                                                                     transaction_type=position['entry_transaction_type'],
-                                                                                     price=order_details['price'])
-
-                            exit_brokerage = await self.trade_executor.calculate_brokerage(exchange_token=position['exchange_token'],
-                                                                                        quantity=position['quantity'],
-                                                                                        product=position['product'],
-                                                                                        transaction_type=position['entry_transaction_type'],
-                                                                                        price=order_details['price'])                     
+                            await self.trade_executor.save_order(order_details=order_details)             
                             
                             await self.portfolio_manager.update_position(tag=position['tag'],
                                                                          updates={
@@ -385,8 +352,8 @@ class MomentumStrategyV1:
                                                                              "entry_disclosed_quantity": order_details['disclosed_quantity'],
                                                                              "entry_filled_quantity": order_details['filled_quantity'],
                                                                              "entry_pending_quantity": order_details['pending_quantity'],
-                                                                             "entry_margin": exit_margin,
-                                                                             "entry_brokerage": exit_brokerage,
+                                                                             "entry_margin": entry_margin,
+                                                                             "entry_brokerage": entry_brokerage,
                                                                             }
                                                                         )
                         else:
@@ -561,7 +528,7 @@ class MomentumStrategyV1:
         """
         ist = ZoneInfo('Asia/Kolkata')
         current_time = datetime.now(ist)
-        morning_start_time = current_time.replace(hour=16, minute=0, second=0, microsecond=0)
-        morning_end_time = current_time.replace(hour=21, minute=0, second=0, microsecond=0)
+        evening_start_time = current_time.replace(hour=16, minute=0, second=0, microsecond=0)
+        evening_end_time = current_time.replace(hour=18, minute=0, second=0, microsecond=0)
 
-        return morning_start_time <= current_time < morning_end_time
+        return evening_start_time <= current_time < evening_end_time

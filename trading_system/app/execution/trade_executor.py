@@ -1,7 +1,6 @@
 import os
 import json
-from app.utils.logger import get_logger
-from app.brokers.broker_factory import BrokerFactory
+from app.brokers.base_broker import BaseBroker
 from typing import Dict, Any
 
 
@@ -14,42 +13,15 @@ class TradeExecutor:
     as well as retrieving order details for various brokers.
     """
 
-    def __init__(self, broker_name: str, account_name: str, strategy_name: str):
+    def __init__(self, broker: BaseBroker):
         """
         Initializes the TradeExecutor with specified broker and account details.
 
         Parameters:
-            broker_name (str): The name of the broker to connect with.
-            account_name (str): The specific account identifier within the broker.
-
-        Initializes:
-            logger: Logger instance specific to this broker and account.
-            broker: Broker instance to be initialized in `initialize`.
+            broker (BaseBroker): The object of the broker.
         """
-        self.broker_name = broker_name
-        self.account_name = account_name
-        self.strategy_name = strategy_name
-        self.logger = get_logger(main_folder_name='TradeExecutor', broker_name=self.broker_name, account_name=self.account_name)
-        self.broker = None
-
-    async def initialize(self):
-        """
-        Initializes the broker connection via the BrokerFactory.
-
-        This method sets up the broker instance based on the specified broker and account, 
-        enabling broker-specific trade functions for order management.
-
-        Raises:
-            Exception: If broker initialization fails, logs the error and raises an exception.
-        """
-        try:
-            self.broker = BrokerFactory.get_broker(broker_name=self.broker_name, account_name=self.account_name)
-            await self.broker.initialize()
-            self.logger.info(f'TradeExecutor initialized for broker: {self.broker_name}, account: {self.account_name}')
-        except Exception as e:
-            error_msg = f"Failed to initialize TradeExecutor for broker: {self.broker_name}, account: {self.account_name}, Error: {e}"
-            self.logger.error(error_msg)
-            raise Exception(error_msg)
+        self.broker = broker
+        self.logger = self.broker.logger
 
     async def place_order(self,
                           exchange_token: str,

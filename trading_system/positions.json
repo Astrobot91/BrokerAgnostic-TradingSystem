@@ -2,7 +2,74 @@
     "UPSTOX_ACCOUNTS": {
         "2HCB67": {
             "MomentumStrategyV1": {
-                "positions": []
+                "positions": [
+                    {
+                        "entry_order_id": "",
+                        "exit_order_id": "",
+                        "trading_symbol": "DIVISLAB FUT 26 DEC 24",
+                        "exchange_token": "37108",
+                        "exchange": "NSE",
+                        "order_type": "MARKET",
+                        "sl": 0.0,
+                        "target": 0.0,
+                        "entry_transaction_type": "BUY",
+                        "exit_transaction_type": "",
+                        "product": "D",
+                        "validity": "DAY",
+                        "quantity": 100,
+                        "entry_price": 0.0,
+                        "exit_price": 0.0,
+                        "entry_timestamp": "2024-12-03 00:00:00",
+                        "exit_timestamp": "2024-12-10 00:00:00",
+                        "status": "execute",
+                        "variety": "regular",
+                        "entry_disclosed_quantity": 0,
+                        "entry_filled_quantity": 0,
+                        "entry_pending_quantity": 0,
+                        "exit_disclosed_quantity": 0,
+                        "exit_filled_quantity": 0,
+                        "exit_pending_quantity": 0,
+                        "entry_margin": 110248.0,
+                        "exit_margin": 0,
+                        "entry_brokerage": 51.43,
+                        "exit_brokerage": 0,
+                        "pnl": 0,
+                        "tag": "MomentumStrategyV1_37108_BUY_100_41270796_ENTRY"
+                    },
+                    {
+                        "entry_order_id": "",
+                        "exit_order_id": "",
+                        "trading_symbol": "SYNGENE FUT 26 DEC 24",
+                        "exchange_token": "40276",
+                        "exchange": "NSE",
+                        "order_type": "MARKET",
+                        "sl": 0.0,
+                        "target": 0.0,
+                        "entry_transaction_type": "BUY",
+                        "exit_transaction_type": "",
+                        "product": "D",
+                        "validity": "DAY",
+                        "quantity": 1000,
+                        "entry_price": 0.0,
+                        "exit_price": 0.0,
+                        "entry_timestamp": "2024-12-03 00:00:00",
+                        "exit_timestamp": "2024-12-10 00:00:00",
+                        "status": "execute",
+                        "variety": "regular",
+                        "entry_disclosed_quantity": 0,
+                        "entry_filled_quantity": 0,
+                        "entry_pending_quantity": 0,
+                        "exit_disclosed_quantity": 0,
+                        "exit_filled_quantity": 0,
+                        "exit_pending_quantity": 0,
+                        "entry_margin": 167826.0,
+                        "exit_margin": 0,
+                        "entry_brokerage": 65.72,
+                        "exit_brokerage": 0,
+                        "pnl": 0,
+                        "tag": "MomentumStrategyV1_40276_BUY_1000_41270796_ENTRY"
+                    }
+                ]
             }
         }
     }

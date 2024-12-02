@@ -2,6 +2,7 @@ import os
 import time
 import pyotp
 import requests
+import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,7 +11,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import urlparse, parse_qs
 from app.authentication.base_authenticator import BaseAuthenticator
-from app.utils.logger import get_logger
 from app.config import UPSTOX_ACCOUNTS
 import json
 
@@ -18,7 +18,7 @@ TOKEN_FILE = 'tokens.json'
 
 class UpstoxAuthenticator(BaseAuthenticator):
    
-    def __init__(self, account_name: str):
+    def __init__(self, account_name: str, logger: logging.Logger):
         self.account_name = account_name
         self.broker_name = 'Upstox'
         self.account_config = UPSTOX_ACCOUNTS.get(self.account_name)
@@ -28,11 +28,7 @@ class UpstoxAuthenticator(BaseAuthenticator):
         self.phone_no = self.account_config['PHONE_NO']
         self.totp_key = self.account_config['TOTP_KEY']
         self.pin_code = self.account_config['PIN_CODE']
-        self.logger = get_logger(
-            main_folder_name=f'Authenticators/UpstoxAuthenticator/Accounts/{self.account_name}',
-            account_name=self.account_name,
-            broker_name=self.broker_name
-        )
+        self.logger = logger
         self.access_token = None
         self.driver = None
 

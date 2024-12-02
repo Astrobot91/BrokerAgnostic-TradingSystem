@@ -1,8 +1,6 @@
 import os
 import json
-from fastapi import FastAPI, HTTPException
-from app.utils.logger import get_logger
-from app.brokers.broker_factory import BrokerFactory
+from app.brokers.base_broker import BaseBroker
 from typing import Dict, Any
 
 
@@ -15,7 +13,11 @@ class PortfolioManager:
     retrieve current orders and positions, and manage trading actions for various brokers.
     """
 
-    def __init__(self, broker_name: str, account_name: str, strategy_name: str):
+    def __init__(self,
+                 broker_name: str,
+                 account_name: str,
+                 strategy_name: str,
+                 broker: BaseBroker):
         """
         Initializes the PortfolioManager with the given broker and account details.
 
@@ -31,27 +33,8 @@ class PortfolioManager:
         self.broker_name = broker_name
         self.account_name = account_name
         self.strategy_name = strategy_name
-        self.logger = get_logger(main_folder_name='PortfolioManager', broker_name=self.broker_name, account_name=self.account_name)
-        self.broker = None
-
-    async def initialize(self):
-        """
-        Initializes the broker connection through the BrokerFactory.
-
-        This method sets up the broker instance based on the specified broker name and account,
-        enabling interaction with broker-specific methods for portfolio management.
-
-        Raises:
-            Exception: If initialization fails, logs the error and raises an exception.
-        """
-        try:
-            self.broker = BrokerFactory.get_broker(broker_name=self.broker_name, account_name=self.account_name)
-            await self.broker.initialize()
-            self.logger.info(f'PortfolioManager initialized for broker: {self.broker_name}, account: {self.account_name}')
-        except Exception as e:
-            error_msg = f"Failed to initialize PortfolioManager for broker: {self.broker_name}, account: {self.account_name}, Error: {e}"
-            self.logger.error(error_msg)
-            raise Exception(error_msg)
+        self.broker = broker
+        self.logger = self.broker.logger
 
     async def get_broker_orderbook(self) -> list:
         """

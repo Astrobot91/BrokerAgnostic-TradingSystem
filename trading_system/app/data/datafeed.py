@@ -1,31 +1,16 @@
 import re
-import aiohttp
 import requests
 import polars as pl
 from bs4 import BeautifulSoup
-from datetime import datetime,  timedelta
-from app.utils.logger import get_logger
-from app.brokers.broker_factory import BrokerFactory
-from typing import List, Dict, Tuple, Any
+from app.brokers.base_broker import BaseBroker
+from typing import Dict, Any
 
 
 class BrokerDataFeed:
     
-    def __init__(self, broker_name: str, account_name: str):
-        self.broker_name = broker_name
-        self.account_name = account_name
-        self.logger =  get_logger(main_folder_name='BrokerDatafeed', broker_name=self.broker_name, account_name=self.account_name)
-        self.broker = None
-
-    async def initialize(self):
-        try:
-            self.broker = BrokerFactory.get_broker(broker_name=self.broker_name, account_name=self.account_name)
-            await self.broker.initialize()
-            self.logger.info(f'BrokerDataFeed initialized for broker: {self.broker_name}, account: {self.account_name}')
-        except Exception as e:
-            error_msg = f"Failed to initialize BrokerDataFeed for broker: {self.broker_name}, account: {self.account_name}, Error: {e}"
-            self.logger.error(error_msg)
-            raise Exception(error_msg)
+    def __init__(self, broker: BaseBroker):
+        self.broker = broker
+        self.logger = self.broker.logger
 
     async def historical_data(self,
                               exchange_token: str,
@@ -190,11 +175,10 @@ class BrokerDataFeed:
 
 class FundamentalDataFeed:
 
-    @staticmethod
-    def marketCapData(isin_code: str = None) -> str:
+    def __init__(self, broker: BaseBroker): 
+        self.logger = broker.logger
 
-        logger = get_logger(main_folder_name='FundamentalDataFeed')
-        
+    def marketCapData(self, isin_code: str = None) -> str:
         try:
             search_url = f"https://www.tijorifinance.com/api/v1/ind/company_search/?q={isin_code}"
             headers = {
@@ -209,7 +193,7 @@ class FundamentalDataFeed:
             if data and len(data) > 0:
                 slug = data[0].get('slug')
                 if not slug:
-                    logger.warning(f'Slug not found in search response.')
+                    self.logger.warning(f'Slug not found in search response.')
 
                 company_url = f"https://www.tijorifinance.com/company/{slug}"
                 company_response = requests.get(company_url, headers=headers)
@@ -227,16 +211,16 @@ class FundamentalDataFeed:
                         market_cap = float(numbers[0])
                         return market_cap
                     else:
-                        logger.warning('No numbers found in the marketcap text.')
+                        self.logger.warning('No numbers found in the marketcap text.')
                 else:
-                    logger.warning('Market cap element not found on the page.')
+                    self.logger.warning('Market cap element not found on the page.')
             else:
-                logger.warning(f'No data found for the provided ISIN code: {isin_code}')
+                self.logger.warning(f'No data found for the provided ISIN code: {isin_code}')
         
             return None
         except requests.HTTPError as http_err:
-            logger.error(f'HTTP error occured: {http_err}')
+            self.logger.error(f'HTTP error occured: {http_err}')
             return None
         except Exception as e:
-            logger.error(f'An error occured: {e}')
+            self.logger.error(f'An error occured: {e}')
             return None
