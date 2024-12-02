@@ -8,6 +8,7 @@ from app.utils.logger import get_logger
 from app.utils.telegram import broadcast_signal
 from app.risk.risk_manager import RiskManager
 from app.brokers.broker_factory import BrokerFactory
+from app.strategies.strategy_base import BaseStrategy
 from app.execution.trade_executor import TradeExecutor
 from app.portfolio.portfolio_manager import PortfolioManager
 from app.data.datafeed import BrokerDataFeed, FundamentalDataFeed
@@ -20,7 +21,7 @@ CURRENT_TIME = datetime.now(ist)
 MARKET_OPENING_TIME = datetime.today().replace(hour=3, minute=45, second=1, microsecond=0).astimezone(ist)
 SIGNAL_DATE = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
-class MomentumStrategyV1:
+class MomentumStrategyV1(BaseStrategy):
     """
     Momentum Strategy Version 1:
     Identifies stocks that have hit their 52-week high or low and generates trading signals based on these events.
@@ -66,7 +67,6 @@ class MomentumStrategyV1:
                                                       broker_name=self.executor_broker_name,
                                                       account_name=self.executor_account_name,
                                                       strategy_name=self.strategy_name)
-            
             self.risk_manager = RiskManager(broker=self.executor_broker)
             self.instrument_df = self.brokerdatafeed.broker.instrument_df
             self.logger.info("MomentumStrategyV1 initialized successfully.")
@@ -112,6 +112,7 @@ class MomentumStrategyV1:
                     
         except Exception as e:
             self.logger.error(f"Error during strategy execution: {e}")
+
 
     async def generate_signals(self) -> pl.DataFrame:
         """

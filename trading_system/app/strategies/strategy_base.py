@@ -7,7 +7,7 @@ class BaseStrategy(ABC):
     All strategies should inherit from this class and implement the abstract methods.
     """
 
-    def __init__(self, strategy_name: str, broker, **kwargs):
+    def __init__(self, account_name: str, broker_name: str):
         """
         Initialize the strategy with a name and broker instance.
 
@@ -15,9 +15,8 @@ class BaseStrategy(ABC):
         :param broker: Broker instance to execute trades.
         :param kwargs: Additional parameters specific to the strategy.
         """
-        self.strategy_name = strategy_name
-        self.broker = broker
-        self.parameters = kwargs
+        self.broker_name = broker_name
+        self.account_name = account_name
 
     @abstractmethod
     async def initialize(self):
@@ -30,12 +29,5 @@ class BaseStrategy(ABC):
     async def execute(self):
         """
         Core logic of the strategy. This method will be called to perform trading operations.
-        """
-        pass
-
-    @abstractmethod
-    async def shutdown(self):
-        """
-        Method to clean up resources when the strategy is stopped.
         """
         pass
