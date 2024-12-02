@@ -44,6 +44,5 @@ STRATEGY_CONFIGS = {
         'HOLDING_PERIOD': 6,
         'SORT_BY': 'marketcap',
         'SORT_ASCENDING': True ,
-        'ISIN_FILE_PATH': '/home/admin/Strategy_Execution_Engine/trading_system/app/data/ISIN_Codes.csv'
     }
 }
