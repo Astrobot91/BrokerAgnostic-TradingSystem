@@ -169,14 +169,13 @@ class PortfolioManager:
 
             with open(POSITIONS_FILE, 'w') as f:
                 json.dump(data, f, indent=4)
-            self.logger.info(f"Position added successfully for strategy: {self.strategy_name}")
+            self.logger.info(f"Position with tag: {tag} added successfully for strategy: {self.strategy_name}")
 
         except Exception as e:
             error_msg = f"Failed to save position for strategy: {self.strategy_name}. Error: {e}"
             self.logger.error(error_msg)
             raise Exception(error_msg)
 
-    
     async def load_positions(self, status: str = None) -> list:
         """
         Retrieves a specific order by broker name, account name, strategy name, and order ID.
@@ -224,7 +223,7 @@ class PortfolioManager:
             if position.get('tag') == tag:
                 position.update(updates)
                 await self.overwrite_positions(positions)
-                self.logger.info(f"Position with tag {tag} updated successfully.")
+                self.logger.info(f"Position with tag: {tag} updated successfully.")
                 return
         self.logger.warning(f"Position with tag {tag} not found for update.")
 

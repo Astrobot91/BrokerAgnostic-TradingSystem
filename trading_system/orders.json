@@ -2,7 +2,72 @@
     "UPSTOX_ACCOUNTS": {
         "2HCB67": {
             "MomentumStrategyV1": {
-                "orders": []
+                "orders": [
+                    {
+                        "exchange": "NFO",
+                        "product": "D",
+                        "price": 0.0,
+                        "quantity": 100,
+                        "status": "complete",
+                        "guid": null,
+                        "tag": "MomentumStrategyV1_37108_BUY_100_41270796_ENTRY",
+                        "instrument_token": "NSE_FO|37108",
+                        "placed_by": "2HCB67",
+                        "tradingsymbol": "DIVISLAB24DECFUT",
+                        "trading_symbol": "DIVISLAB24DECFUT",
+                        "order_type": "MARKET",
+                        "validity": "DAY",
+                        "trigger_price": 0.0,
+                        "disclosed_quantity": 0,
+                        "transaction_type": "BUY",
+                        "average_price": 6246.65,
+                        "filled_quantity": 100,
+                        "pending_quantity": 0,
+                        "status_message": null,
+                        "status_message_raw": null,
+                        "exchange_order_id": "2200000008062916",
+                        "parent_order_id": null,
+                        "order_id": "241203040012531",
+                        "variety": "SIMPLE",
+                        "order_timestamp": "2024-12-03 09:26:48",
+                        "exchange_timestamp": "2024-12-03 09:26:48",
+                        "is_amo": false,
+                        "order_request_id": "1",
+                        "order_ref_id": "UDAPI-I-YryWXZUjPQzH25WxNMPbQ4PG"
+                    },
+                    {
+                        "exchange": "NFO",
+                        "product": "D",
+                        "price": 0.0,
+                        "quantity": 1000,
+                        "status": "complete",
+                        "guid": null,
+                        "tag": "MomentumStrategyV1_40276_BUY_1000_41270796_ENTRY",
+                        "instrument_token": "NSE_FO|40276",
+                        "placed_by": "2HCB67",
+                        "tradingsymbol": "SYNGENE24DECFUT",
+                        "trading_symbol": "SYNGENE24DECFUT",
+                        "order_type": "MARKET",
+                        "validity": "DAY",
+                        "trigger_price": 0.0,
+                        "disclosed_quantity": 0,
+                        "transaction_type": "BUY",
+                        "average_price": 945.5,
+                        "filled_quantity": 1000,
+                        "pending_quantity": 0,
+                        "status_message": null,
+                        "status_message_raw": null,
+                        "exchange_order_id": "2400000008864057",
+                        "parent_order_id": null,
+                        "order_id": "241203040012533",
+                        "variety": "SIMPLE",
+                        "order_timestamp": "2024-12-03 09:26:48",
+                        "exchange_timestamp": "2024-12-03 09:26:48",
+                        "is_amo": false,
+                        "order_request_id": "1",
+                        "order_ref_id": "UDAPI-I-dsPrBdg1tGEAmzszAgJxOV9S"
+                    }
+                ]
             }
         }
     }

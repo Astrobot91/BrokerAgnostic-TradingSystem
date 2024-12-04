@@ -61,7 +61,10 @@ class MomentumStrategyV1(BaseStrategy):
 
             self.fundamental_datafeed = FundamentalDataFeed(broker=self.datafeed_broker)
             self.brokerdatafeed = BrokerDataFeed(broker=self.datafeed_broker)
-            self.trade_executor = TradeExecutor(broker=self.executor_broker)
+            self.trade_executor = TradeExecutor(broker=self.executor_broker,
+                                                broker_name=self.executor_broker_name,
+                                                account_name=self.executor_account_name,
+                                                strategy_name=self.strategy_name)
             self.portfolio_manager = PortfolioManager(broker=self.executor_broker,
                                                       broker_name=self.executor_broker_name,
                                                       account_name=self.executor_account_name,
@@ -199,15 +202,29 @@ class MomentumStrategyV1(BaseStrategy):
             )
             nearest_expiry = master_file_slice['expiry'].min()
             futures_slice = master_file_slice.filter(pl.col('expiry') == nearest_expiry)
-            
-            if not futures_slice.is_empty():
+
+            message_details = signals.join(
+                            futures_slice,
+                            left_on="trading_symbol",
+                            right_on="asset_symbol",
+                            how="inner"
+                            ).drop(["trading_symbol", "exchange_token_right"]).rename({
+                            "trading_symbol_right": "trading_symbol"
+                            })
+                                
+            if not message_details.is_empty():
                 self.logger.info(f'Futures contracts generated today: {futures_slice}')
-                telegram_msg = f'Signals for : {(SIGNAL_DATE + timedelta(days=1)).replace(hour=9, minute=15, second=0)}\n\n'
+                telegram_msg = f'Signals for : {(SIGNAL_DATE + timedelta(days=1)).replace(hour=9, minute=15, second=0)}\n'
                 i = 1
-                column_names = futures_slice.columns
-                for row in futures_slice.rows():
+                column_names = message_details.columns
+                for row in message_details.rows():
                     row_dict = dict(zip(column_names, row))
-                    telegram_msg += f"{i}. {row_dict['trading_symbol']}\n"
+                    direction = (
+                        'Fresh 52W High' if row_dict['final_high_signal'] == 1 
+                        else 'Fresh 52W Low' if row_dict['final_low_signal'] == 1 
+                        else None
+                    )
+                    telegram_msg += f"\n{i}. {row_dict['underlying_symbol']}\n - ContractName: {row_dict['trading_symbol']}\n - Direction: {direction}\n - LotSize: {row_dict['lot_size']}\n - MarketCap: {row_dict['marketcap']}\n"
                     i += 1
                 telegram_msg += f'\nSignal Provider details:\nBroker: {self.datafeed_broker_name}\nAccount: {self.datafeed_account_name}'
                 broadcast_signal(signal=telegram_msg)
@@ -368,9 +385,9 @@ class MomentumStrategyV1(BaseStrategy):
                 for position_dict in open_positions:
                     transaction_type = 'SELL'
                     status = 'execute'
-                    exit_date = datetime.strptime(position_dict['exit_timestamp'], "Y%-%m-%d %H:%M:%S")
-                    sl = position_dict['price'] - ((position_dict['price']) * (self.strategy_config.get('STOP_LOSS')))
-                    ohlc_quote = await self.brokerdatafeed.ohlc_quote(exchange_token=position_dict['exchange_token'])
+                    exit_date = datetime.strptime(position_dict['exit_timestamp'], "%Y-%m-%d %H:%M:%S")
+                    sl = position_dict['exit_price'] - ((position_dict['exit_price']) * (self.strategy_config.get('STOP_LOSS')))
+                    ohlc_quote = await self.brokerdatafeed.ohlc_quote(exchange_token=position_dict['exchange_token'], interval='1d')
                     low = ohlc_quote['low']
                     
                     total_brokerage = 0
@@ -395,8 +412,8 @@ class MomentumStrategyV1(BaseStrategy):
                                                                             'status': status,
                                                                             'exit_transaction_type': transaction_type,
                                                                             'tag': tag
-                                                                        }
-                                                                    )
+                                                                            }
+                                                                        )
                         else:
                             self.logger.error(f'Not enough balance for brokerage to execute the trade.')
                     else:

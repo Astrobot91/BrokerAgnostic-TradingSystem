@@ -13,13 +13,20 @@ class TradeExecutor:
     as well as retrieving order details for various brokers.
     """
 
-    def __init__(self, broker: BaseBroker):
+    def __init__(self,
+                 broker_name: str,
+                 account_name: str,
+                 strategy_name: str,
+                 broker: BaseBroker):
         """
         Initializes the TradeExecutor with specified broker and account details.
 
         Parameters:
             broker (BaseBroker): The object of the broker.
         """
+        self.broker_name = broker_name
+        self.account_name = account_name
+        self.strategy_name = strategy_name
         self.broker = broker
         self.logger = self.broker.logger
 
