@@ -66,6 +66,38 @@
                         "is_amo": false,
                         "order_request_id": "1",
                         "order_ref_id": "UDAPI-I-dsPrBdg1tGEAmzszAgJxOV9S"
+                    },
+                    {
+                        "exchange": "NFO",
+                        "product": "D",
+                        "price": 0.0,
+                        "quantity": 50,
+                        "status": "complete",
+                        "guid": null,
+                        "tag": "MomentumStrategyV1_39351_BUY_50_1733325062_ENTRY",
+                        "instrument_token": "NSE_FO|39351",
+                        "placed_by": "2HCB67",
+                        "tradingsymbol": "OFSS24DECFUT",
+                        "trading_symbol": "OFSS24DECFUT",
+                        "order_type": "MARKET",
+                        "validity": "DAY",
+                        "trigger_price": 0.0,
+                        "disclosed_quantity": 0,
+                        "transaction_type": "BUY",
+                        "average_price": 12547.55,
+                        "filled_quantity": 50,
+                        "pending_quantity": 0,
+                        "status_message": null,
+                        "status_message_raw": null,
+                        "exchange_order_id": "2400000001558127",
+                        "parent_order_id": null,
+                        "order_id": "241205040006071",
+                        "variety": "SIMPLE",
+                        "order_timestamp": "2024-12-05 09:17:05",
+                        "exchange_timestamp": "2024-12-05 09:17:05",
+                        "is_amo": false,
+                        "order_request_id": "1",
+                        "order_ref_id": "UDAPI-I-cOEkcBCx0hhLiHTGxH02R4OX"
                     }
                 ]
             }

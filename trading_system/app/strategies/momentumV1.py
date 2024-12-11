@@ -16,7 +16,6 @@ from app.config import STRATEGY_CONFIGS
 
 ist = ZoneInfo('Asia/Kolkata')
 POSITION_ID = int(time.time())
-CURRENT_TIME = datetime.now(ist)
 MARKET_OPENING_TIME = datetime.today().replace(hour=3, minute=45, second=1, microsecond=0).astimezone(ist)
 SIGNAL_DATE = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
@@ -107,7 +106,7 @@ class MomentumStrategyV1(BaseStrategy):
 
             if self.is_morning():
                 while True:
-                    if CURRENT_TIME > MARKET_OPENING_TIME:
+                    if datetime.now(ist) > MARKET_OPENING_TIME:
                         await self._execute_trades()
                         await self.trade_executor.remove_access_token()
                         break
@@ -375,6 +374,8 @@ class MomentumStrategyV1(BaseStrategy):
                                                                         )
                         else:
                             self.logger.warning(f'Order Validation failed for order: {position}')
+            else:
+                self.logger.info(f"There are no orders to execute today.")
         except Exception as e:
             self.logger.exception(f"Error executing trades: {e}")
 
