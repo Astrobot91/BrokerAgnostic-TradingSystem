@@ -328,7 +328,7 @@ class MomentumStrategyV1(BaseStrategy):
                             
                             order_details = await self.trade_executor.get_order_details(order_id=order_response['order_id'])
                             await self.trade_executor.save_order(order_details=order_details)                 
-                            
+                        
                             exit_asset_price = position['quantity'] * order_details['average_price']
                             pnl = exit_asset_price - (position['entry_asset_price'] + exit_brokerage + position['entry_brokerage'])
                             await self.portfolio_manager.update_position(tag=position['tag'],
@@ -346,7 +346,6 @@ class MomentumStrategyV1(BaseStrategy):
                                                                              "pnl": pnl
                                                                             }
                                                                         )
-
                 for position in execute_positions:
                     if position.get('tag').endswith('ENTRY'):
                         status = 'open'
@@ -408,7 +407,6 @@ class MomentumStrategyV1(BaseStrategy):
                                                                                    transaction_type=transaction_type)
 
                     available_balance = await self.trade_executor.get_funds_and_margin()
-
                     if (datetime.today() >= exit_date) or ((low <= sl)):
                         tag = position_dict['tag']
                         if (datetime.today() >= exit_date):
@@ -557,6 +555,6 @@ class MomentumStrategyV1(BaseStrategy):
         ist = ZoneInfo('Asia/Kolkata')
         current_time = datetime.now(ist)
         evening_start_time = current_time.replace(hour=16, minute=0, second=0, microsecond=0)
-        evening_end_time = current_time.replace(hour=18, minute=0, second=0, microsecond=0)
+        evening_end_time = current_time.replace(hour=23, minute=59, second=0, microsecond=0)
 
         return evening_start_time <= current_time < evening_end_time

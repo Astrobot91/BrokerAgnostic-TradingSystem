@@ -401,3 +401,104 @@ Upstox - 2HCB67 - 2024-12-11 10:45:49,058 - INFO - Historical data for: 772 from
 Upstox - 2HCB67 - 2024-12-11 10:45:50,615 - INFO - Historical data for: 958 from: 2022-03-17 to: 2024-12-11 retrieved.
 Upstox - 2HCB67 - 2024-12-11 10:45:50,891 - INFO - No signals generated today.
 Upstox - 2HCB67 - 2024-12-11 10:45:50,893 - INFO - No qualified futures contracts to trade.
+Upstox - 2HCB67 - 2024-12-11 16:55:16,629 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-11 16:55:16,629 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-11 16:55:16,629 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-11 16:55:18,581 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-11 16:55:19,178 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-11 16:55:24,179 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-11 16:55:24,379 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-11 16:55:24,380 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-11 16:55:25,050 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-11 16:55:25,050 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-11 16:55:25,689 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-11 16:55:35,694 - INFO - Current URL after login: http://localhost:8000/callback?code=sNLIE0
+Upstox - 2HCB67 - 2024-12-11 16:55:35,695 - INFO - Authorization code obtained: sNLIE0
+Upstox - 2HCB67 - 2024-12-11 16:55:35,754 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-11 16:55:36,653 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-11 16:55:36,654 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-11 16:55:37,765 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-11 16:55:37,766 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-11 16:55:37,766 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-11 16:55:38,663 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-11 16:55:38,664 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-11 16:55:38,820 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-11 16:55:38,890 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-11 16:55:38,890 - INFO - Position: {'entry_order_id': '241205040006071', 'exit_order_id': '', 'trading_symbol': 'OFSS FUT 26 DEC 24', 'exchange_token': '39351', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 50, 'entry_price': 12547.55, 'exit_price': 0.0, 'entry_asset_price': 627377.5, 'exit_asset_price': 0.0, 'entry_timestamp': '2024-12-05 09:17:05', 'exit_timestamp': '2024-12-12 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 50, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 312057.5, 'exit_margin': 0, 'entry_brokerage': 51.43, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39351_BUY_50_1733325062_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-11 16:55:39,005 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-11 16:55:39,060 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-11 16:55:39,060 - INFO - Position: {'entry_order_id': '241210040012247', 'exit_order_id': '', 'trading_symbol': 'MAXHEALTH FUT 26 DEC 24', 'exchange_token': '39200', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 525, 'entry_price': 1119.2, 'exit_price': 0.0, 'entry_asset_price': 587580, 'exit_asset_price': 0.0, 'entry_timestamp': '2024-12-10 09:26:56', 'exit_timestamp': '2024-12-17 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 525, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 135687.69375, 'exit_margin': 0, 'entry_brokerage': 49.66, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39200_BUY_525_1733802663_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-11 16:55:39,179 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-11 16:55:39,233 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-11 16:55:39,233 - INFO - Position: {'entry_order_id': '241210040012254', 'exit_order_id': '', 'trading_symbol': 'LT FUT 26 DEC 24', 'exchange_token': '39100', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 150, 'entry_price': 3932.95, 'exit_price': 0.0, 'entry_asset_price': 589942.5, 'exit_asset_price': 0.0, 'entry_timestamp': '2024-12-10 09:26:56', 'exit_timestamp': '2024-12-17 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 150, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 105214.4625, 'exit_margin': 0, 'entry_brokerage': 49.77, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39100_BUY_150_1733802663_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-11 16:55:40,161 - INFO - Historical data for: 371 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:40,983 - INFO - Historical data for: 10999 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:41,691 - INFO - Historical data for: 6364 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:42,577 - INFO - Historical data for: 19234 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:43,333 - INFO - Historical data for: 16675 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:44,130 - INFO - Historical data for: 18143 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:44,862 - INFO - Historical data for: 19061 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:45,639 - INFO - Historical data for: 881 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:46,380 - INFO - Historical data for: 8075 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:46,998 - INFO - Historical data for: 17400 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 16:55:47,869 - INFO - Historical data for: 16669 from: 2022-03-17 to: 2024-12-11 retrieved.
+Upstox - 2HCB67 - 2024-12-11 18:24:25,645 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-11 18:24:25,645 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-11 18:24:25,645 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-11 18:24:25,938 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-11 18:24:26,284 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-11 18:24:31,284 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-11 18:24:31,286 - ERROR - Error during Upstox login: HTTPConnectionPool(host='localhost', port=42879): Max retries exceeded with url: /session/7da09b00809f7a4c9a454995bf923918/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f54a6d06f90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Upstox - 2HCB67 - 2024-12-11 18:24:31,289 - ERROR - Initialization failed: HTTPConnectionPool(host='localhost', port=42879): Max retries exceeded with url: /session/7da09b00809f7a4c9a454995bf923918/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f54a6d06f90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Upstox - 2HCB67 - 2024-12-11 18:24:31,289 - ERROR - Failed to initialize MomentumStrategyV1 for broker: Upstox, account: 2HCB67. Error: HTTPConnectionPool(host='localhost', port=42879): Max retries exceeded with url: /session/7da09b00809f7a4c9a454995bf923918/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f54a6d06f90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Upstox - 2HCB67 - 2024-12-11 18:24:42,874 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-11 18:24:42,874 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-11 18:24:42,874 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-11 18:24:43,167 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-11 18:24:43,578 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-11 18:24:48,579 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-11 18:24:48,774 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-11 18:24:48,774 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-11 18:24:49,447 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-11 18:24:49,447 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-11 18:24:50,085 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-11 18:25:00,090 - INFO - Current URL after login: http://localhost:8000/callback?code=ErNXT6
+Upstox - 2HCB67 - 2024-12-11 18:25:00,090 - INFO - Authorization code obtained: ErNXT6
+Upstox - 2HCB67 - 2024-12-11 18:25:00,150 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-11 18:25:01,031 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-11 18:25:01,032 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-11 18:25:01,986 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-11 18:25:01,986 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-11 18:25:01,986 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-11 18:25:02,883 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-11 18:25:02,883 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-11 18:25:03,019 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-11 18:25:03,074 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-11 18:25:03,074 - INFO - Position: {'entry_order_id': '241205040006071', 'exit_order_id': '', 'trading_symbol': 'OFSS FUT 26 DEC 24', 'exchange_token': '39351', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 50, 'entry_price': 12547.55, 'exit_price': 0.0, 'entry_asset_price': 627377.5, 'exit_asset_price': 0.0, 'entry_timestamp': '2024-12-05 09:17:05', 'exit_timestamp': '2024-12-12 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 50, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 312057.5, 'exit_margin': 0, 'entry_brokerage': 51.43, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39351_BUY_50_1733325062_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-11 18:25:03,183 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-11 18:25:03,241 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-11 18:25:03,242 - INFO - Position: {'entry_order_id': '241210040012247', 'exit_order_id': '', 'trading_symbol': 'MAXHEALTH FUT 26 DEC 24', 'exchange_token': '39200', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 525, 'entry_price': 1119.2, 'exit_price': 0.0, 'entry_asset_price': 587580, 'exit_asset_price': 0.0, 'entry_timestamp': '2024-12-10 09:26:56', 'exit_timestamp': '2024-12-17 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 525, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 135687.69375, 'exit_margin': 0, 'entry_brokerage': 49.66, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39200_BUY_525_1733802663_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-11 18:25:03,353 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-11 18:25:03,403 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-11 18:25:03,403 - INFO - Position: {'entry_order_id': '241210040012254', 'exit_order_id': '', 'trading_symbol': 'LT FUT 26 DEC 24', 'exchange_token': '39100', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 150, 'entry_price': 3932.95, 'exit_price': 0.0, 'entry_asset_price': 589942.5, 'exit_asset_price': 0.0, 'entry_timestamp': '2024-12-10 09:26:56', 'exit_timestamp': '2024-12-17 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 150, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 105214.4625, 'exit_margin': 0, 'entry_brokerage': 49.77, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39100_BUY_150_1733802663_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-11 18:36:33,146 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-11 18:36:33,146 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-11 18:36:33,146 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-11 18:36:33,456 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-11 18:36:33,833 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-11 18:36:38,834 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-11 18:36:39,030 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-11 18:36:39,030 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-11 18:36:39,702 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-11 18:36:39,703 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-11 18:36:40,342 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-11 18:36:50,347 - INFO - Current URL after login: http://localhost:8000/callback?code=O_C1XV
+Upstox - 2HCB67 - 2024-12-11 18:36:50,347 - INFO - Authorization code obtained: O_C1XV
+Upstox - 2HCB67 - 2024-12-11 18:36:50,407 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-11 18:36:51,296 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-11 18:36:51,296 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-11 18:36:52,249 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-11 18:36:52,250 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-11 18:36:52,250 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-11 18:36:53,139 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-11 18:36:53,139 - INFO - Access token removed successfully.
