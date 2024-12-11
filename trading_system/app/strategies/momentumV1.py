@@ -84,6 +84,8 @@ class MomentumStrategyV1(BaseStrategy):
         Generates signals and executes trades based on those signals.
         """
         try:
+            await self.trade_executor.remove_access_token()
+
             if self.is_evening():
                 await self._check_exits()        
                 open_positions = await self.portfolio_manager.load_positions(status='open')
@@ -92,7 +94,6 @@ class MomentumStrategyV1(BaseStrategy):
                 
                 if qualified_futures.is_empty():
                     self.logger.info("No qualified futures contracts to trade.")
-                    await self.trade_executor.remove_access_token()
                     return
                 self.logger.info(f"Qualified futures contracts: {qualified_futures}")
                 
@@ -102,13 +103,10 @@ class MomentumStrategyV1(BaseStrategy):
                 else:
                     self.logger.info(f'Cannot save new positions as expiry is under holding period.')
 
-                await self.trade_executor.remove_access_token()
-
             if self.is_morning():
                 while True:
                     if datetime.now(ist) > MARKET_OPENING_TIME:
                         await self._execute_trades()
-                        await self.trade_executor.remove_access_token()
                         break
                     
         except Exception as e:
@@ -242,7 +240,12 @@ class MomentumStrategyV1(BaseStrategy):
         Saves new positions.
         """
         space_left_in_portfolio = self.strategy_config.get('PORTFOLIO_SIZE') - no_of_open_positions
+        available_margin = ...
+        # CHECK FOR TOMMORROWS EXITS, IF ANY STOCKS ARE EXITING TOMMORROW, RECORD THEIR MARGIN
+        # BUT THIS HAS A FLAW, WHAT IF THE CURRENT POSITION SUFFERS FROM GAPDOWN TOMMORROW? 
+        
         available_balance = await self.trade_executor.get_funds_and_margin()
+        self.logger.info(f"Space left in the portfolio: {space_left_in_portfolio}")
 
         try:
             counter = 0
@@ -250,6 +253,7 @@ class MomentumStrategyV1(BaseStrategy):
             columns = qualified_instruments.columns
             for row in qualified_instruments.rows():
                 if counter >= space_left_in_portfolio:
+                    self.logger.info(f"No space left in the portfolio for the signals.")
                     break
                 else:
                     row_dict = dict(zip(columns, row))
@@ -311,6 +315,7 @@ class MomentumStrategyV1(BaseStrategy):
                         order_is_valid, exit_margin, exit_brokerage = await self.risk_manager.validate_order(exchange_token=position['exchange_token'],
                                                                                                             transaction_type=position['exit_transaction_type'],
                                                                                                             quantity=position['quantity'],
+                                                                                                            trade_type='exit',
                                                                                                             product=position['product'])
                         if order_is_valid:
                             order_response = await self.trade_executor.place_order(exchange_token=position['exchange_token'],
@@ -324,16 +329,18 @@ class MomentumStrategyV1(BaseStrategy):
                             order_details = await self.trade_executor.get_order_details(order_id=order_response['order_id'])
                             await self.trade_executor.save_order(order_details=order_details)                 
                             
-                            pnl = exit_margin - (position['entry_margin'] + exit_brokerage + position['entry_brokerage'])
+                            exit_asset_price = position['quantity'] * order_details['average_price']
+                            pnl = exit_asset_price - (position['entry_asset_price'] + exit_brokerage + position['entry_brokerage'])
                             await self.portfolio_manager.update_position(tag=position['tag'],
                                                                          updates={
                                                                              "exit_order_id": order_details['order_id'],
-                                                                             "exit_price": order_details['price'],
+                                                                             "exit_price": order_details['average_price'],
                                                                              "exit_timestamp": order_details['order_timestamp'],
                                                                              "status": status,
                                                                              "exit_disclosed_quantity": order_details['disclosed_quantity'],
                                                                              "exit_filled_quantity": order_details['filled_quantity'],
                                                                              "exit_pending_quantity": order_details['pending_quantity'],
+                                                                             "exit_asset_price": exit_asset_price,
                                                                              "exit_margin": exit_margin,
                                                                              "exit_brokerage": exit_brokerage,
                                                                              "pnl": pnl
@@ -346,6 +353,7 @@ class MomentumStrategyV1(BaseStrategy):
                         order_is_valid, entry_margin, entry_brokerage = await self.risk_manager.validate_order(exchange_token=position['exchange_token'],
                                                                                                             transaction_type=position['entry_transaction_type'],
                                                                                                             quantity=position['quantity'],
+                                                                                                            trade_type='entry',
                                                                                                             product=position['product'])
                         if order_is_valid:
                             order_response = await self.trade_executor.place_order(exchange_token=position['exchange_token'],
@@ -359,15 +367,17 @@ class MomentumStrategyV1(BaseStrategy):
                             order_details = await self.trade_executor.get_order_details(order_id=order_response['order_id'])
                             await self.trade_executor.save_order(order_details=order_details)             
                             
+                            entry_asset_price = order_details['average_price'] * position['quantity']
                             await self.portfolio_manager.update_position(tag=position['tag'],
                                                                          updates={
                                                                              "entry_order_id": order_details['order_id'],
-                                                                             "entry_price": order_details['price'],
+                                                                             "entry_price": order_details['average_price'],
                                                                              "entry_timestamp": order_details['order_timestamp'],
                                                                              "status": status,
                                                                              "entry_disclosed_quantity": order_details['disclosed_quantity'],
                                                                              "entry_filled_quantity": order_details['filled_quantity'],
                                                                              "entry_pending_quantity": order_details['pending_quantity'],
+                                                                             "entry_asset_price": entry_asset_price,
                                                                              "entry_margin": entry_margin,
                                                                              "entry_brokerage": entry_brokerage,
                                                                             }

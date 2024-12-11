@@ -5,3 +5,200 @@ Upstox - 2HCB67 - 2024-12-09 03:40:04,477 - INFO - Initializing UpstoxBroker for
 Upstox - 2HCB67 - 2024-12-09 03:40:04,477 - INFO - Starting authentication process for Upstox
 Upstox - 2HCB67 - 2024-12-09 03:40:04,477 - INFO - Access token loaded from tokens.json
 Upstox - 2HCB67 - 2024-12-09 03:40:05,325 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-09 10:40:02,309 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-09 10:40:02,309 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-09 10:40:02,309 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-09 10:40:03,379 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-09 10:40:03,379 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-09 10:40:03,380 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-09 10:40:04,240 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-09 10:40:04,286 - ERROR - Failed to retrieve OHLC response: 401 - {"status":"error","errors":[{"errorCode":"UDAPI100050","message":"Invalid token used to access API","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100050","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-09 10:40:04,286 - ERROR - Exception during OHLC response retrieval: Failed to retrieve OHLC response: 401 - {"status":"error","errors":[{"errorCode":"UDAPI100050","message":"Invalid token used to access API","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100050","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-09 10:40:04,287 - ERROR - Error occured while processing exits: 'NoneType' object is not subscriptable
+Upstox - 2HCB67 - 2024-12-09 10:40:04,287 - ERROR - Error during strategy execution: Error occured while processing exits: 'NoneType' object is not subscriptable
+Upstox - 2HCB67 - 2024-12-09 19:02:07,764 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-09 19:02:07,764 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-09 19:02:07,764 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-09 19:02:08,850 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-09 19:02:08,850 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-09 19:02:08,850 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-09 19:02:09,721 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-09 19:02:09,722 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-09 19:03:13,807 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-09 19:03:13,807 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-09 19:03:13,807 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-09 19:03:15,821 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-09 19:03:16,424 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-09 19:03:21,424 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-09 19:03:21,620 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-09 19:03:21,620 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-09 19:03:22,288 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-09 19:03:22,288 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-09 19:03:22,931 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-09 19:03:32,936 - INFO - Current URL after login: http://localhost:8000/callback?code=UC50lw
+Upstox - 2HCB67 - 2024-12-09 19:03:32,936 - INFO - Authorization code obtained: UC50lw
+Upstox - 2HCB67 - 2024-12-09 19:03:32,996 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-09 19:03:33,896 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-09 19:03:33,897 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-09 19:03:34,855 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-09 19:03:34,855 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-09 19:03:34,855 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-09 19:03:35,748 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-09 19:03:35,748 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-09 19:03:35,914 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-09 19:03:35,947 - ERROR - Failed to retrieve balance response: 423 - {"status":"error","errors":[{"errorCode":"UDAPI100072","message":"The Funds service is accessible from 5:30 AM to 12:00 AM IST daily. Please try again during these service hours.","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100072","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-09 19:03:35,948 - ERROR - Exception while retrieving balance: Failed to retrieve balance response: 423 - {"status":"error","errors":[{"errorCode":"UDAPI100072","message":"The Funds service is accessible from 5:30 AM to 12:00 AM IST daily. Please try again during these service hours.","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100072","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-09 19:03:35,948 - INFO - Position: {'entry_order_id': '241203040012531', 'exit_order_id': '', 'trading_symbol': 'DIVISLAB FUT 26 DEC 24', 'exchange_token': '37108', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 100, 'entry_price': 0.0, 'exit_price': 0.0, 'entry_timestamp': '2024-12-03 09:26:48', 'exit_timestamp': '2024-12-10 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 100, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 111324.3, 'exit_margin': 0, 'entry_brokerage': 51.29, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_37108_BUY_100_41270796_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-09 19:03:36,057 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-09 19:03:36,088 - ERROR - Failed to retrieve balance response: 423 - {"status":"error","errors":[{"errorCode":"UDAPI100072","message":"The Funds service is accessible from 5:30 AM to 12:00 AM IST daily. Please try again during these service hours.","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100072","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-09 19:03:36,089 - ERROR - Exception while retrieving balance: Failed to retrieve balance response: 423 - {"status":"error","errors":[{"errorCode":"UDAPI100072","message":"The Funds service is accessible from 5:30 AM to 12:00 AM IST daily. Please try again during these service hours.","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100072","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-09 19:03:36,089 - INFO - Position: {'entry_order_id': '241203040012533', 'exit_order_id': '', 'trading_symbol': 'SYNGENE FUT 26 DEC 24', 'exchange_token': '40276', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 1000, 'entry_price': 0.0, 'exit_price': 0.0, 'entry_timestamp': '2024-12-03 09:26:48', 'exit_timestamp': '2024-12-10 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 1000, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 168650.75, 'exit_margin': 0, 'entry_brokerage': 65.55, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_40276_BUY_1000_41270796_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-09 19:03:36,190 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-09 19:03:36,224 - ERROR - Failed to retrieve balance response: 423 - {"status":"error","errors":[{"errorCode":"UDAPI100072","message":"The Funds service is accessible from 5:30 AM to 12:00 AM IST daily. Please try again during these service hours.","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100072","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-09 19:03:36,225 - ERROR - Exception while retrieving balance: Failed to retrieve balance response: 423 - {"status":"error","errors":[{"errorCode":"UDAPI100072","message":"The Funds service is accessible from 5:30 AM to 12:00 AM IST daily. Please try again during these service hours.","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100072","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-09 19:03:36,225 - INFO - Position: {'entry_order_id': '241205040006071', 'exit_order_id': '', 'trading_symbol': 'OFSS FUT 26 DEC 24', 'exchange_token': '39351', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 50, 'entry_price': 0.0, 'exit_price': 0.0, 'entry_timestamp': '2024-12-05 09:17:05', 'exit_timestamp': '2024-12-12 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 50, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 312057.5, 'exit_margin': 0, 'entry_brokerage': 51.43, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39351_BUY_50_1733325062_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-09 19:03:39,058 - INFO - Historical data for: 371 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:39,917 - INFO - Historical data for: 10999 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:40,637 - INFO - Historical data for: 6364 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:41,624 - INFO - Historical data for: 19234 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:42,427 - INFO - Historical data for: 16675 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:43,165 - INFO - Historical data for: 18143 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:44,081 - INFO - Historical data for: 19061 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:44,743 - INFO - Historical data for: 881 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:45,549 - INFO - Historical data for: 8075 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:46,249 - INFO - Historical data for: 17400 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:47,128 - INFO - Historical data for: 16669 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:47,866 - INFO - Historical data for: 3103 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:48,767 - INFO - Historical data for: 6705 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:49,825 - INFO - Historical data for: 14413 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:51,053 - INFO - Historical data for: 6733 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:51,792 - INFO - Historical data for: 11543 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:52,553 - INFO - Historical data for: 8479 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:53,309 - INFO - Historical data for: 10666 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:54,020 - INFO - Historical data for: 21174 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:54,784 - INFO - Historical data for: 11195 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:55,555 - INFO - Historical data for: 7929 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:56,375 - INFO - Historical data for: 10099 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:57,130 - INFO - Historical data for: 11654 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:57,944 - INFO - Historical data for: 676 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:58,729 - INFO - Historical data for: 14299 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:59,279 - WARNING - No data found for the provided ISIN code: DUMMYSAN021
+Upstox - 2HCB67 - 2024-12-09 19:03:59,354 - WARNING - Historical data for exchange token: 23446 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:03:59,354 - INFO - Historical data for: 23446 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:03:59,605 - WARNING - No historical data for symbol: 171NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:03:59,920 - WARNING - No data found for the provided ISIN code: DUMMYSAN022
+Upstox - 2HCB67 - 2024-12-09 19:03:59,989 - WARNING - Historical data for exchange token: 23447 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:03:59,989 - INFO - Historical data for: 23447 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:00,240 - WARNING - No historical data for symbol: 181NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:00,488 - WARNING - No data found for the provided ISIN code: DUMMYSAN020
+Upstox - 2HCB67 - 2024-12-09 19:04:00,552 - WARNING - Historical data for exchange token: 14784 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:00,552 - INFO - Historical data for: 14784 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:00,804 - WARNING - No historical data for symbol: 161NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:01,040 - WARNING - No data found for the provided ISIN code: DUMMYSAN010
+Upstox - 2HCB67 - 2024-12-09 19:04:01,100 - WARNING - Historical data for exchange token: 14762 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:01,101 - INFO - Historical data for: 14762 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:01,352 - WARNING - No historical data for symbol: 061NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:01,790 - WARNING - No data found for the provided ISIN code: DUMMYSAN011
+Upstox - 2HCB67 - 2024-12-09 19:04:01,863 - WARNING - Historical data for exchange token: 14764 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:01,863 - INFO - Historical data for: 14764 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:02,114 - WARNING - No historical data for symbol: 071NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:02,441 - WARNING - No data found for the provided ISIN code: DUMMYSAN014
+Upstox - 2HCB67 - 2024-12-09 19:04:02,513 - WARNING - Historical data for exchange token: 14772 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:02,513 - INFO - Historical data for: 14772 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:02,765 - WARNING - No historical data for symbol: 101NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:03,112 - WARNING - No data found for the provided ISIN code: DUMMYSAN015
+Upstox - 2HCB67 - 2024-12-09 19:04:03,192 - WARNING - Historical data for exchange token: 14774 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:03,192 - INFO - Historical data for: 14774 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:03,444 - WARNING - No historical data for symbol: 111NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:03,846 - WARNING - No data found for the provided ISIN code: DUMMYSAN012
+Upstox - 2HCB67 - 2024-12-09 19:04:03,922 - WARNING - Historical data for exchange token: 14767 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:03,922 - INFO - Historical data for: 14767 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:04,173 - WARNING - No historical data for symbol: 081NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:04,528 - WARNING - No data found for the provided ISIN code: DUMMYSAN013
+Upstox - 2HCB67 - 2024-12-09 19:04:04,597 - WARNING - Historical data for exchange token: 14769 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:04,598 - INFO - Historical data for: 14769 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:04,848 - WARNING - No historical data for symbol: 091NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:05,297 - WARNING - No data found for the provided ISIN code: DUMMYSAN018
+Upstox - 2HCB67 - 2024-12-09 19:04:05,418 - WARNING - Historical data for exchange token: 14781 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:05,418 - INFO - Historical data for: 14781 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:05,669 - WARNING - No historical data for symbol: 141NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:05,957 - WARNING - No data found for the provided ISIN code: DUMMYSAN019
+Upstox - 2HCB67 - 2024-12-09 19:04:06,019 - WARNING - Historical data for exchange token: 14782 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:06,019 - INFO - Historical data for: 14782 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:06,270 - WARNING - No historical data for symbol: 151NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:06,733 - WARNING - No data found for the provided ISIN code: DUMMYSAN016
+Upstox - 2HCB67 - 2024-12-09 19:04:06,809 - WARNING - Historical data for exchange token: 14777 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:06,810 - INFO - Historical data for: 14777 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:07,060 - WARNING - No historical data for symbol: 121NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:07,510 - WARNING - No data found for the provided ISIN code: DUMMYSAN017
+Upstox - 2HCB67 - 2024-12-09 19:04:07,589 - WARNING - Historical data for exchange token: 14778 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:07,589 - INFO - Historical data for: 14778 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:07,840 - WARNING - No historical data for symbol: 131NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:08,156 - WARNING - No data found for the provided ISIN code: DUMMYSAN007
+Upstox - 2HCB67 - 2024-12-09 19:04:08,235 - WARNING - Historical data for exchange token: 14753 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:08,236 - INFO - Historical data for: 14753 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:08,487 - WARNING - No historical data for symbol: 031NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:08,817 - WARNING - No data found for the provided ISIN code: DUMMYSAN008
+Upstox - 2HCB67 - 2024-12-09 19:04:08,892 - WARNING - Historical data for exchange token: 14755 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:08,892 - INFO - Historical data for: 14755 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:09,143 - WARNING - No historical data for symbol: 041NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:09,738 - WARNING - No data found for the provided ISIN code: DUMMYSAN005
+Upstox - 2HCB67 - 2024-12-09 19:04:09,811 - WARNING - Historical data for exchange token: 14747 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:09,811 - INFO - Historical data for: 14747 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:10,062 - WARNING - No historical data for symbol: 011NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:10,380 - WARNING - No data found for the provided ISIN code: DUMMYSAN006
+Upstox - 2HCB67 - 2024-12-09 19:04:10,448 - WARNING - Historical data for exchange token: 14751 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:10,448 - INFO - Historical data for: 14751 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:10,699 - WARNING - No historical data for symbol: 021NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:11,165 - WARNING - No data found for the provided ISIN code: DUMMYSAN009
+Upstox - 2HCB67 - 2024-12-09 19:04:11,240 - WARNING - Historical data for exchange token: 14758 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:11,240 - INFO - Historical data for: 14758 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:11,492 - WARNING - No historical data for symbol: 051NSETEST
+Upstox - 2HCB67 - 2024-12-09 19:04:12,446 - INFO - Historical data for: 1594 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:13,183 - INFO - Historical data for: 14672 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:13,926 - INFO - Historical data for: 11373 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:14,702 - INFO - Historical data for: 422 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:15,406 - INFO - Historical data for: 404 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:16,206 - INFO - Historical data for: 10604 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:16,812 - INFO - Historical data for: 19913 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:22,743 - INFO - Historical data for: 16713 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:23,513 - INFO - Historical data for: 11703 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:24,397 - INFO - Historical data for: 10726 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:25,181 - INFO - Historical data for: 1922 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:25,967 - INFO - Historical data for: 324 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:26,761 - INFO - Historical data for: 694 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:27,546 - INFO - Historical data for: 10940 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:28,471 - INFO - Historical data for: 18096 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:29,310 - INFO - Historical data for: 20302 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:30,329 - INFO - Historical data for: 2142 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:31,112 - INFO - Historical data for: 21238 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:31,918 - INFO - Historical data for: 10738 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:32,663 - INFO - Historical data for: 1394 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:33,378 - INFO - Historical data for: 467 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:34,264 - INFO - Historical data for: 10794 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:34,977 - INFO - Historical data for: 31181 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:35,678 - INFO - Historical data for: 17939 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:36,601 - INFO - Historical data for: 13270 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:37,481 - INFO - Historical data for: 4668 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:38,168 - INFO - Historical data for: 3220 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:38,900 - INFO - Historical data for: 3506 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:39,604 - INFO - Historical data for: 4306 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:40,431 - INFO - Historical data for: 1348 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:41,262 - INFO - Historical data for: 9581 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:42,144 - INFO - Historical data for: 21808 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:42,868 - INFO - Historical data for: 1901 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:43,852 - INFO - Historical data for: 3432 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:44,695 - WARNING - Historical data for exchange token: 7 from: 2022-03-15 to: 2024-12-09 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-09 19:04:44,695 - INFO - Historical data for: 7 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:44,946 - WARNING - No historical data for symbol: AARTIIND
+Upstox - 2HCB67 - 2024-12-09 19:04:45,577 - INFO - Historical data for: 10243 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:46,630 - INFO - Historical data for: 3456 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:47,993 - INFO - Historical data for: 21614 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:48,781 - INFO - Historical data for: 1406 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:49,568 - INFO - Historical data for: 17438 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:50,624 - INFO - Historical data for: 11915 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:51,757 - INFO - Historical data for: 20242 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:53,590 - INFO - Historical data for: 18652 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:54,367 - INFO - Historical data for: 22 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:55,060 - INFO - Historical data for: 4684 from: 2022-03-15 to: 2024-12-09 retrieved.
+Upstox - 2HCB67 - 2024-12-09 19:04:55,901 - INFO - Historical data for: 5258 from: 2022-03-15 to: 2024-12-09 retrieved.
