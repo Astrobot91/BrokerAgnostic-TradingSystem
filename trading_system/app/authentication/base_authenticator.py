@@ -7,4 +7,3 @@ class BaseAuthenticator(ABC):
     def authenticate():
         """Generate access_token for the any broker"""
         pass
-

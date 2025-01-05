@@ -1,0 +1,761 @@
+Upstox - 2HCB67 - 2024-12-23 03:40:02,454 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-23 03:40:02,454 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-23 03:40:02,455 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-23 03:40:04,734 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-23 03:40:05,316 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-23 03:40:10,316 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-23 03:40:10,517 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-23 03:40:10,517 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-23 03:40:11,188 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-23 03:40:11,188 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-23 03:40:11,826 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-23 03:40:21,831 - INFO - Current URL after login: http://localhost:8000/callback?code=GmvL8T
+Upstox - 2HCB67 - 2024-12-23 03:40:21,831 - INFO - Authorization code obtained: GmvL8T
+Upstox - 2HCB67 - 2024-12-23 03:40:21,891 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-23 03:40:22,944 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-23 03:40:22,945 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-23 03:40:24,091 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-23 03:40:24,091 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-23 03:40:24,091 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-23 03:40:25,010 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-23 03:40:25,010 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-23 03:40:25,066 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-23 03:40:26,131 - INFO - Historical data for: 371 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:33,887 - INFO - Historical data for: 10999 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:34,742 - INFO - Historical data for: 6364 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:35,892 - INFO - Historical data for: 19234 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:36,805 - INFO - Historical data for: 16675 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:37,751 - INFO - Historical data for: 18143 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:38,676 - INFO - Historical data for: 19061 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:39,569 - INFO - Historical data for: 881 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:40,810 - INFO - Historical data for: 8075 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:41,780 - INFO - Historical data for: 17400 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:43,907 - INFO - Historical data for: 16669 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:47,293 - INFO - Historical data for: 3103 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:48,158 - INFO - Historical data for: 6705 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:51,136 - INFO - Historical data for: 14413 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:52,209 - INFO - Historical data for: 6733 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:53,066 - INFO - Historical data for: 11543 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:53,973 - INFO - Historical data for: 8479 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:55,174 - INFO - Historical data for: 10666 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:56,136 - INFO - Historical data for: 21174 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:57,317 - INFO - Historical data for: 11195 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:58,296 - INFO - Historical data for: 7929 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:40:59,719 - INFO - Historical data for: 10099 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:00,653 - INFO - Historical data for: 11654 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:01,664 - INFO - Historical data for: 676 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:02,721 - INFO - Historical data for: 14299 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:03,253 - WARNING - No data found for the provided ISIN code: DUMMYSAN021
+Upstox - 2HCB67 - 2024-12-23 03:41:03,307 - WARNING - Historical data for exchange token: 23446 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:03,307 - INFO - Historical data for: 23446 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:03,558 - WARNING - No historical data for symbol: 171NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:03,846 - WARNING - No data found for the provided ISIN code: DUMMYSAN022
+Upstox - 2HCB67 - 2024-12-23 03:41:03,905 - WARNING - Historical data for exchange token: 23447 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:03,905 - INFO - Historical data for: 23447 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:04,157 - WARNING - No historical data for symbol: 181NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:04,389 - WARNING - No data found for the provided ISIN code: DUMMYSAN020
+Upstox - 2HCB67 - 2024-12-23 03:41:04,455 - WARNING - Historical data for exchange token: 14784 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:04,456 - INFO - Historical data for: 14784 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:04,707 - WARNING - No historical data for symbol: 161NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:04,999 - WARNING - No data found for the provided ISIN code: DUMMYSAN010
+Upstox - 2HCB67 - 2024-12-23 03:41:05,062 - WARNING - Historical data for exchange token: 14762 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:05,062 - INFO - Historical data for: 14762 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:05,312 - WARNING - No historical data for symbol: 061NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:05,615 - WARNING - No data found for the provided ISIN code: DUMMYSAN011
+Upstox - 2HCB67 - 2024-12-23 03:41:05,668 - WARNING - Historical data for exchange token: 14764 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:05,668 - INFO - Historical data for: 14764 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:05,919 - WARNING - No historical data for symbol: 071NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:06,239 - WARNING - No data found for the provided ISIN code: DUMMYSAN014
+Upstox - 2HCB67 - 2024-12-23 03:41:06,309 - WARNING - Historical data for exchange token: 14772 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:06,309 - INFO - Historical data for: 14772 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:06,561 - WARNING - No historical data for symbol: 101NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:06,994 - WARNING - No data found for the provided ISIN code: DUMMYSAN015
+Upstox - 2HCB67 - 2024-12-23 03:41:07,053 - WARNING - Historical data for exchange token: 14774 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:07,053 - INFO - Historical data for: 14774 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:07,304 - WARNING - No historical data for symbol: 111NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:07,643 - WARNING - No data found for the provided ISIN code: DUMMYSAN012
+Upstox - 2HCB67 - 2024-12-23 03:41:07,705 - WARNING - Historical data for exchange token: 14767 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:07,705 - INFO - Historical data for: 14767 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:07,956 - WARNING - No historical data for symbol: 081NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:08,226 - WARNING - No data found for the provided ISIN code: DUMMYSAN013
+Upstox - 2HCB67 - 2024-12-23 03:41:08,288 - WARNING - Historical data for exchange token: 14769 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:08,288 - INFO - Historical data for: 14769 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:08,540 - WARNING - No historical data for symbol: 091NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:08,853 - WARNING - No data found for the provided ISIN code: DUMMYSAN018
+Upstox - 2HCB67 - 2024-12-23 03:41:08,916 - WARNING - Historical data for exchange token: 14781 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:08,916 - INFO - Historical data for: 14781 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:09,167 - WARNING - No historical data for symbol: 141NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:09,366 - WARNING - No data found for the provided ISIN code: DUMMYSAN019
+Upstox - 2HCB67 - 2024-12-23 03:41:09,429 - WARNING - Historical data for exchange token: 14782 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:09,429 - INFO - Historical data for: 14782 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:09,680 - WARNING - No historical data for symbol: 151NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:10,113 - WARNING - No data found for the provided ISIN code: DUMMYSAN016
+Upstox - 2HCB67 - 2024-12-23 03:41:10,171 - WARNING - Historical data for exchange token: 14777 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:10,171 - INFO - Historical data for: 14777 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:10,422 - WARNING - No historical data for symbol: 121NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:10,863 - WARNING - No data found for the provided ISIN code: DUMMYSAN017
+Upstox - 2HCB67 - 2024-12-23 03:41:10,924 - WARNING - Historical data for exchange token: 14778 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:10,924 - INFO - Historical data for: 14778 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:11,175 - WARNING - No historical data for symbol: 131NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:11,457 - WARNING - No data found for the provided ISIN code: DUMMYSAN007
+Upstox - 2HCB67 - 2024-12-23 03:41:11,511 - WARNING - Historical data for exchange token: 14753 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:11,511 - INFO - Historical data for: 14753 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:11,762 - WARNING - No historical data for symbol: 031NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:11,999 - WARNING - No data found for the provided ISIN code: DUMMYSAN008
+Upstox - 2HCB67 - 2024-12-23 03:41:12,057 - WARNING - Historical data for exchange token: 14755 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:12,057 - INFO - Historical data for: 14755 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:12,308 - WARNING - No historical data for symbol: 041NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:12,527 - WARNING - No data found for the provided ISIN code: DUMMYSAN005
+Upstox - 2HCB67 - 2024-12-23 03:41:12,585 - WARNING - Historical data for exchange token: 14747 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:12,585 - INFO - Historical data for: 14747 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:12,836 - WARNING - No historical data for symbol: 011NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:13,284 - WARNING - No data found for the provided ISIN code: DUMMYSAN006
+Upstox - 2HCB67 - 2024-12-23 03:41:13,345 - WARNING - Historical data for exchange token: 14751 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:13,345 - INFO - Historical data for: 14751 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:13,596 - WARNING - No historical data for symbol: 021NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:13,905 - WARNING - No data found for the provided ISIN code: DUMMYSAN009
+Upstox - 2HCB67 - 2024-12-23 03:41:13,962 - WARNING - Historical data for exchange token: 14758 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:41:13,962 - INFO - Historical data for: 14758 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:14,213 - WARNING - No historical data for symbol: 051NSETEST
+Upstox - 2HCB67 - 2024-12-23 03:41:14,852 - INFO - Historical data for: 1594 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:15,762 - INFO - Historical data for: 14672 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:16,978 - INFO - Historical data for: 11373 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:18,827 - INFO - Historical data for: 422 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:19,620 - INFO - Historical data for: 404 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:20,515 - INFO - Historical data for: 10604 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:21,370 - INFO - Historical data for: 19913 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:22,361 - INFO - Historical data for: 16713 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:23,191 - INFO - Historical data for: 11703 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:24,566 - INFO - Historical data for: 10726 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:29,093 - INFO - Historical data for: 1922 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:30,147 - INFO - Historical data for: 694 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:31,098 - INFO - Historical data for: 324 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:31,939 - INFO - Historical data for: 10940 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:32,952 - INFO - Historical data for: 18096 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:34,069 - INFO - Historical data for: 20302 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:37,208 - INFO - Historical data for: 2142 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:40,998 - INFO - Historical data for: 21238 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:42,116 - INFO - Historical data for: 10738 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:42,988 - INFO - Historical data for: 1394 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:44,006 - INFO - Historical data for: 467 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:44,945 - INFO - Historical data for: 10794 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:46,991 - INFO - Historical data for: 31181 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:47,762 - INFO - Historical data for: 17939 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:48,729 - INFO - Historical data for: 13270 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:49,716 - INFO - Historical data for: 4668 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:50,439 - INFO - Historical data for: 3220 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:52,388 - INFO - Historical data for: 3506 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:53,346 - INFO - Historical data for: 4306 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:54,332 - INFO - Historical data for: 1348 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:56,490 - INFO - Historical data for: 9581 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:41:59,188 - INFO - Historical data for: 21808 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:00,427 - INFO - Historical data for: 1901 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:01,368 - INFO - Historical data for: 3432 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:02,507 - WARNING - Historical data for exchange token: 7 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:42:02,507 - INFO - Historical data for: 7 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:02,757 - WARNING - No historical data for symbol: AARTIIND
+Upstox - 2HCB67 - 2024-12-23 03:42:05,540 - INFO - Historical data for: 10243 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:06,386 - INFO - Historical data for: 3456 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:07,353 - INFO - Historical data for: 21614 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:09,972 - INFO - Historical data for: 1406 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:10,778 - INFO - Historical data for: 17438 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:11,698 - INFO - Historical data for: 11915 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:13,503 - INFO - Historical data for: 20242 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:14,585 - INFO - Historical data for: 18652 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:15,634 - INFO - Historical data for: 22 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:17,546 - INFO - Historical data for: 4684 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:18,383 - INFO - Historical data for: 5258 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:19,337 - INFO - Historical data for: 14418 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:20,720 - INFO - Historical data for: 14309 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:21,625 - INFO - Historical data for: 3363 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:22,516 - INFO - Historical data for: 739 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:23,587 - INFO - Historical data for: 1964 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:26,424 - INFO - Historical data for: 13538 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:29,252 - INFO - Historical data for: 5748 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:30,356 - INFO - Historical data for: 547 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:31,215 - INFO - Historical data for: 17534 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:32,151 - INFO - Historical data for: 4749 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:33,114 - INFO - Historical data for: 3045 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:34,051 - INFO - Historical data for: 19585 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:34,912 - INFO - Historical data for: 3563 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:38,112 - INFO - Historical data for: 5900 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:39,699 - INFO - Historical data for: 3499 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:42,041 - INFO - Historical data for: 3351 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:42,961 - WARNING - Current day's full market quote not added for exchange token: 2277.
+Upstox - 2HCB67 - 2024-12-23 03:42:42,961 - INFO - Historical data for: 2277 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:43,691 - INFO - Historical data for: 3787 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:44,630 - INFO - Historical data for: 24948 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:45,779 - INFO - Historical data for: 21690 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:46,751 - INFO - Historical data for: 18883 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:48,438 - INFO - Historical data for: 1363 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:49,362 - INFO - Historical data for: 17875 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:50,245 - INFO - Historical data for: 20825 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:51,254 - INFO - Historical data for: 1624 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:52,163 - WARNING - Historical data for exchange token: 3063 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:42:52,163 - INFO - Historical data for: 3063 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:52,414 - WARNING - No historical data for symbol: VEDL
+Upstox - 2HCB67 - 2024-12-23 03:42:53,100 - INFO - Historical data for: 22377 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:53,970 - INFO - Historical data for: 10753 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:54,943 - INFO - Historical data for: 583 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:55,820 - INFO - Historical data for: 9683 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:56,897 - INFO - Historical data for: 11872 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:57,840 - INFO - Historical data for: 18564 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:42:58,772 - INFO - Historical data for: 383 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:01,354 - INFO - Historical data for: 15355 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:06,290 - INFO - Historical data for: 3518 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:07,843 - INFO - Historical data for: 3273 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:08,802 - INFO - Historical data for: 5701 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:12,770 - INFO - Historical data for: 685 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:13,891 - WARNING - Current day's full market quote not added for exchange token: 7229.
+Upstox - 2HCB67 - 2024-12-23 03:43:13,891 - INFO - Historical data for: 7229 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:16,102 - INFO - Historical data for: 312 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:17,130 - WARNING - Current day's full market quote not added for exchange token: 10447.
+Upstox - 2HCB67 - 2024-12-23 03:43:17,130 - INFO - Historical data for: 10447 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:17,962 - INFO - Historical data for: 11236 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:18,949 - INFO - Historical data for: 15083 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:19,923 - WARNING - Current day's full market quote not added for exchange token: 3718.
+Upstox - 2HCB67 - 2024-12-23 03:43:19,924 - INFO - Historical data for: 3718 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:21,391 - INFO - Historical data for: 1023 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:22,164 - INFO - Historical data for: 18391 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:23,139 - INFO - Historical data for: 1232 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:24,246 - WARNING - Current day's full market quote not added for exchange token: 10440.
+Upstox - 2HCB67 - 2024-12-23 03:43:24,247 - INFO - Historical data for: 10440 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:25,240 - INFO - Historical data for: 18365 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:26,323 - INFO - Historical data for: 15332 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:27,465 - INFO - Historical data for: 4745 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:28,475 - INFO - Historical data for: 637 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:29,256 - INFO - Historical data for: 4204 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:30,292 - WARNING - Current day's full market quote not added for exchange token: 13310.
+Upstox - 2HCB67 - 2024-12-23 03:43:30,292 - INFO - Historical data for: 13310 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:31,199 - WARNING - Historical data for exchange token: 6994 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:43:31,199 - INFO - Historical data for: 6994 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:31,450 - WARNING - No historical data for symbol: BSOFT
+Upstox - 2HCB67 - 2024-12-23 03:43:32,165 - INFO - Historical data for: 21951 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:34,457 - INFO - Historical data for: 23650 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:35,484 - INFO - Historical data for: 17971 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:36,583 - INFO - Historical data for: 14366 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:37,682 - WARNING - Current day's full market quote not added for exchange token: 13528.
+Upstox - 2HCB67 - 2024-12-23 03:43:37,682 - INFO - Historical data for: 13528 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:38,664 - WARNING - Current day's full market quote not added for exchange token: 6656.
+Upstox - 2HCB67 - 2024-12-23 03:43:38,664 - INFO - Historical data for: 6656 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:41,138 - INFO - Historical data for: 17903 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:43,547 - WARNING - Current day's full market quote not added for exchange token: 2319.
+Upstox - 2HCB67 - 2024-12-23 03:43:43,547 - INFO - Historical data for: 2319 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:44,319 - WARNING - Current day's full market quote not added for exchange token: 2475.
+Upstox - 2HCB67 - 2024-12-23 03:43:44,320 - INFO - Historical data for: 2475 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:45,456 - WARNING - Current day's full market quote not added for exchange token: 13611.
+Upstox - 2HCB67 - 2024-12-23 03:43:45,457 - INFO - Historical data for: 13611 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:46,529 - WARNING - Current day's full market quote not added for exchange token: 10217.
+Upstox - 2HCB67 - 2024-12-23 03:43:46,530 - INFO - Historical data for: 10217 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:47,531 - INFO - Historical data for: 15313 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:48,466 - INFO - Historical data for: 2029 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:50,945 - INFO - Historical data for: 2181 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:51,924 - WARNING - Current day's full market quote not added for exchange token: 4244.
+Upstox - 2HCB67 - 2024-12-23 03:43:51,924 - INFO - Historical data for: 4244 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:52,808 - INFO - Historical data for: 236 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:53,951 - INFO - Historical data for: 4503 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:43:54,972 - INFO - Historical data for: 1633 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:01,355 - INFO - Historical data for: 11630 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:02,403 - INFO - Historical data for: 17818 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:03,274 - WARNING - Historical data for exchange token: 9819 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:44:03,274 - INFO - Historical data for: 9819 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:03,525 - WARNING - No historical data for symbol: HAVELLS
+Upstox - 2HCB67 - 2024-12-23 03:44:06,038 - INFO - Historical data for: 220 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:06,981 - WARNING - Historical data for exchange token: 2263 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:44:06,981 - INFO - Historical data for: 2263 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:07,232 - WARNING - No historical data for symbol: BANDHANBNK
+Upstox - 2HCB67 - 2024-12-23 03:44:08,172 - INFO - Historical data for: 11403 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:09,314 - INFO - Historical data for: 1997 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:10,157 - INFO - Historical data for: 342 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:11,463 - INFO - Historical data for: 25780 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:13,693 - WARNING - Current day's full market quote not added for exchange token: 13147.
+Upstox - 2HCB67 - 2024-12-23 03:44:13,693 - INFO - Historical data for: 13147 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:14,548 - INFO - Historical data for: 6545 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:15,567 - INFO - Historical data for: 13 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:16,395 - INFO - Historical data for: 17963 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:17,457 - WARNING - Current day's full market quote not added for exchange token: 5097.
+Upstox - 2HCB67 - 2024-12-23 03:44:17,457 - INFO - Historical data for: 5097 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:18,250 - INFO - Historical data for: 1660 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:19,318 - WARNING - Historical data for exchange token: 9590 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:44:19,319 - INFO - Historical data for: 9590 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:19,570 - WARNING - No historical data for symbol: POLYCAB
+Upstox - 2HCB67 - 2024-12-23 03:44:20,173 - INFO - Historical data for: 275 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:21,213 - WARNING - Current day's full market quote not added for exchange token: 2031.
+Upstox - 2HCB67 - 2024-12-23 03:44:21,213 - INFO - Historical data for: 2031 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:22,026 - INFO - Historical data for: 157 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:23,087 - INFO - Historical data for: 212 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:24,073 - WARNING - Current day's full market quote not added for exchange token: 2955.
+Upstox - 2HCB67 - 2024-12-23 03:44:24,073 - INFO - Historical data for: 2955 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:24,981 - INFO - Historical data for: 3426 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:26,042 - INFO - Historical data for: 19943 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:26,947 - INFO - Historical data for: 9599 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:28,001 - WARNING - Current day's full market quote not added for exchange token: 2043.
+Upstox - 2HCB67 - 2024-12-23 03:44:28,001 - INFO - Historical data for: 2043 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:28,942 - INFO - Historical data for: 1512 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:29,787 - WARNING - Historical data for exchange token: 4963 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:44:29,787 - INFO - Historical data for: 4963 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:30,038 - WARNING - No historical data for symbol: ICICIBANK
+Upstox - 2HCB67 - 2024-12-23 03:44:30,820 - INFO - Historical data for: 11287 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:31,791 - INFO - Historical data for: 263 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:33,018 - WARNING - Current day's full market quote not added for exchange token: 4067.
+Upstox - 2HCB67 - 2024-12-23 03:44:33,018 - INFO - Historical data for: 4067 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:34,081 - INFO - Historical data for: 335 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:35,184 - INFO - Historical data for: 11483 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:38,008 - INFO - Historical data for: 29135 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:39,153 - WARNING - Current day's full market quote not added for exchange token: 2412.
+Upstox - 2HCB67 - 2024-12-23 03:44:39,153 - INFO - Historical data for: 2412 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:40,012 - INFO - Historical data for: 6066 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:41,025 - INFO - Historical data for: 11184 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:41,970 - INFO - Historical data for: 11351 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:42,855 - INFO - Historical data for: 760 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:43,853 - INFO - Historical data for: 163 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:44,769 - WARNING - Historical data for exchange token: 25 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:44:44,769 - INFO - Historical data for: 25 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:45,020 - WARNING - No historical data for symbol: ADANIENT
+Upstox - 2HCB67 - 2024-12-23 03:44:45,808 - INFO - Historical data for: 17869 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:46,762 - INFO - Historical data for: 11723 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:47,815 - WARNING - Current day's full market quote not added for exchange token: 3721.
+Upstox - 2HCB67 - 2024-12-23 03:44:47,815 - INFO - Historical data for: 3721 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:48,778 - INFO - Historical data for: 15141 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:49,819 - INFO - Historical data for: 20374 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:50,828 - INFO - Historical data for: 317 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:51,689 - INFO - Historical data for: 21770 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:52,751 - INFO - Historical data for: 2303 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:55,269 - INFO - Historical data for: 438 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:56,291 - WARNING - Current day's full market quote not added for exchange token: 2885.
+Upstox - 2HCB67 - 2024-12-23 03:44:56,291 - INFO - Historical data for: 2885 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:44:58,602 - WARNING - Current day's full market quote not added for exchange token: 11262.
+Upstox - 2HCB67 - 2024-12-23 03:44:58,604 - INFO - Historical data for: 11262 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:01,202 - INFO - Historical data for: 1174 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:02,306 - INFO - Historical data for: 11536 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:03,271 - INFO - Historical data for: 13285 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:05,029 - WARNING - Current day's full market quote not added for exchange token: 13404.
+Upstox - 2HCB67 - 2024-12-23 03:45:05,030 - INFO - Historical data for: 13404 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:07,967 - INFO - Historical data for: 30108 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:10,376 - INFO - Historical data for: 1270 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:11,353 - INFO - Historical data for: 4717 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:12,551 - WARNING - Current day's full market quote not added for exchange token: 9480.
+Upstox - 2HCB67 - 2024-12-23 03:45:12,552 - INFO - Historical data for: 9480 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:13,839 - WARNING - Current day's full market quote not added for exchange token: 11532.
+Upstox - 2HCB67 - 2024-12-23 03:45:13,839 - INFO - Historical data for: 11532 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:14,874 - INFO - Historical data for: 17094 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:19,175 - INFO - Historical data for: 1333 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:20,177 - WARNING - No data found for the provided ISIN code: INE121A08PJ0
+Upstox - 2HCB67 - 2024-12-23 03:45:20,222 - WARNING - Historical data for exchange token: 19257 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 03:45:20,222 - INFO - Historical data for: 19257 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:20,473 - WARNING - No historical data for symbol: CHOLAFIN
+Upstox - 2HCB67 - 2024-12-23 03:45:24,342 - INFO - Historical data for: 2963 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:25,266 - INFO - Historical data for: 628 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:26,633 - WARNING - Current day's full market quote not added for exchange token: 7406.
+Upstox - 2HCB67 - 2024-12-23 03:45:26,633 - INFO - Historical data for: 7406 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:27,766 - INFO - Historical data for: 24184 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:28,634 - WARNING - Current day's full market quote not added for exchange token: 3150.
+Upstox - 2HCB67 - 2024-12-23 03:45:28,634 - INFO - Historical data for: 3150 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:29,970 - INFO - Historical data for: 910 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:31,716 - WARNING - Current day's full market quote not added for exchange token: 10599.
+Upstox - 2HCB67 - 2024-12-23 03:45:31,716 - INFO - Historical data for: 10599 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:32,679 - INFO - Historical data for: 526 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:33,632 - INFO - Historical data for: 3411 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:34,592 - WARNING - Current day's full market quote not added for exchange token: 13751.
+Upstox - 2HCB67 - 2024-12-23 03:45:34,592 - INFO - Historical data for: 13751 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:36,263 - INFO - Historical data for: 14977 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:38,634 - INFO - Historical data for: 3405 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:40,780 - INFO - Historical data for: 14732 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:42,647 - WARNING - Current day's full market quote not added for exchange token: 2664.
+Upstox - 2HCB67 - 2024-12-23 03:45:42,647 - INFO - Historical data for: 2664 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:43,598 - INFO - Historical data for: 18921 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:46,853 - INFO - Historical data for: 772 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:48,931 - INFO - Historical data for: 958 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 03:45:49,207 - INFO - No signals generated today.
+Upstox - 2HCB67 - 2024-12-23 03:45:49,209 - INFO - No qualified futures contracts to trade.
+Upstox - 2HCB67 - 2024-12-23 10:40:02,652 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-23 10:40:02,653 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-23 10:40:02,654 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-23 10:40:04,885 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-23 10:40:05,456 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-23 10:40:10,456 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-23 10:40:10,664 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-23 10:40:10,664 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-23 10:40:11,339 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-23 10:40:11,339 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-23 10:40:11,983 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-23 10:40:21,988 - INFO - Current URL after login: http://localhost:8000/callback?code=pcO9rO
+Upstox - 2HCB67 - 2024-12-23 10:40:21,988 - INFO - Authorization code obtained: pcO9rO
+Upstox - 2HCB67 - 2024-12-23 10:40:22,049 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-23 10:40:22,974 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-23 10:40:22,975 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-23 10:40:24,136 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-23 10:40:24,136 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-23 10:40:24,136 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-23 10:40:25,078 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-23 10:40:25,078 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-23 10:40:25,139 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-23 10:40:28,072 - INFO - Historical data for: 371 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:28,902 - INFO - Historical data for: 10999 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:29,734 - INFO - Historical data for: 6364 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:30,469 - INFO - Historical data for: 19234 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:31,307 - INFO - Historical data for: 16675 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:32,080 - INFO - Historical data for: 18143 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:32,875 - INFO - Historical data for: 19061 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:33,944 - INFO - Historical data for: 881 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:34,656 - INFO - Historical data for: 8075 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:35,359 - INFO - Historical data for: 17400 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:36,196 - INFO - Historical data for: 16669 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:36,984 - INFO - Historical data for: 3103 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:37,711 - INFO - Historical data for: 6705 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:38,453 - INFO - Historical data for: 14413 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:39,272 - INFO - Historical data for: 6733 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:39,960 - INFO - Historical data for: 11543 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:40,758 - INFO - Historical data for: 8479 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:41,651 - INFO - Historical data for: 10666 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:42,248 - INFO - Historical data for: 21174 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:43,178 - INFO - Historical data for: 11195 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:43,990 - INFO - Historical data for: 7929 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:44,827 - INFO - Historical data for: 10099 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:45,542 - INFO - Historical data for: 11654 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:46,340 - INFO - Historical data for: 676 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:46,934 - INFO - Historical data for: 14299 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:47,285 - WARNING - No data found for the provided ISIN code: DUMMYSAN021
+Upstox - 2HCB67 - 2024-12-23 10:40:47,314 - WARNING - Historical data for exchange token: 23446 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:47,314 - INFO - Historical data for: 23446 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:47,565 - WARNING - No historical data for symbol: 171NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:47,659 - WARNING - No data found for the provided ISIN code: DUMMYSAN022
+Upstox - 2HCB67 - 2024-12-23 10:40:47,692 - WARNING - Historical data for exchange token: 23447 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:47,692 - INFO - Historical data for: 23447 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:47,943 - WARNING - No historical data for symbol: 181NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:48,053 - WARNING - No data found for the provided ISIN code: DUMMYSAN020
+Upstox - 2HCB67 - 2024-12-23 10:40:48,079 - WARNING - Historical data for exchange token: 14784 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:48,079 - INFO - Historical data for: 14784 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:48,331 - WARNING - No historical data for symbol: 161NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:48,494 - WARNING - No data found for the provided ISIN code: DUMMYSAN010
+Upstox - 2HCB67 - 2024-12-23 10:40:48,527 - WARNING - Historical data for exchange token: 14762 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:48,527 - INFO - Historical data for: 14762 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:48,778 - WARNING - No historical data for symbol: 061NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:48,905 - WARNING - No data found for the provided ISIN code: DUMMYSAN011
+Upstox - 2HCB67 - 2024-12-23 10:40:48,935 - WARNING - Historical data for exchange token: 14764 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:48,935 - INFO - Historical data for: 14764 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:49,186 - WARNING - No historical data for symbol: 071NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:49,300 - WARNING - No data found for the provided ISIN code: DUMMYSAN014
+Upstox - 2HCB67 - 2024-12-23 10:40:49,330 - WARNING - Historical data for exchange token: 14772 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:49,330 - INFO - Historical data for: 14772 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:49,580 - WARNING - No historical data for symbol: 101NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:49,706 - WARNING - No data found for the provided ISIN code: DUMMYSAN015
+Upstox - 2HCB67 - 2024-12-23 10:40:49,735 - WARNING - Historical data for exchange token: 14774 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:49,735 - INFO - Historical data for: 14774 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:49,987 - WARNING - No historical data for symbol: 111NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:50,084 - WARNING - No data found for the provided ISIN code: DUMMYSAN012
+Upstox - 2HCB67 - 2024-12-23 10:40:50,114 - WARNING - Historical data for exchange token: 14767 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:50,114 - INFO - Historical data for: 14767 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:50,365 - WARNING - No historical data for symbol: 081NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:50,458 - WARNING - No data found for the provided ISIN code: DUMMYSAN013
+Upstox - 2HCB67 - 2024-12-23 10:40:50,491 - WARNING - Historical data for exchange token: 14769 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:50,491 - INFO - Historical data for: 14769 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:50,742 - WARNING - No historical data for symbol: 091NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:50,856 - WARNING - No data found for the provided ISIN code: DUMMYSAN018
+Upstox - 2HCB67 - 2024-12-23 10:40:50,886 - WARNING - Historical data for exchange token: 14781 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:50,886 - INFO - Historical data for: 14781 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:51,137 - WARNING - No historical data for symbol: 141NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:51,226 - WARNING - No data found for the provided ISIN code: DUMMYSAN019
+Upstox - 2HCB67 - 2024-12-23 10:40:51,254 - WARNING - Historical data for exchange token: 14782 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:51,255 - INFO - Historical data for: 14782 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:51,506 - WARNING - No historical data for symbol: 151NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:51,623 - WARNING - No data found for the provided ISIN code: DUMMYSAN016
+Upstox - 2HCB67 - 2024-12-23 10:40:51,653 - WARNING - Historical data for exchange token: 14777 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:51,653 - INFO - Historical data for: 14777 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:51,904 - WARNING - No historical data for symbol: 121NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:52,015 - WARNING - No data found for the provided ISIN code: DUMMYSAN017
+Upstox - 2HCB67 - 2024-12-23 10:40:52,054 - WARNING - Historical data for exchange token: 14778 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:52,054 - INFO - Historical data for: 14778 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:52,306 - WARNING - No historical data for symbol: 131NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:52,448 - WARNING - No data found for the provided ISIN code: DUMMYSAN007
+Upstox - 2HCB67 - 2024-12-23 10:40:52,487 - WARNING - Historical data for exchange token: 14753 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:52,487 - INFO - Historical data for: 14753 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:52,739 - WARNING - No historical data for symbol: 031NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:52,852 - WARNING - No data found for the provided ISIN code: DUMMYSAN008
+Upstox - 2HCB67 - 2024-12-23 10:40:52,883 - WARNING - Historical data for exchange token: 14755 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:52,883 - INFO - Historical data for: 14755 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:53,134 - WARNING - No historical data for symbol: 041NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:53,235 - WARNING - No data found for the provided ISIN code: DUMMYSAN005
+Upstox - 2HCB67 - 2024-12-23 10:40:53,262 - WARNING - Historical data for exchange token: 14747 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:53,262 - INFO - Historical data for: 14747 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:53,513 - WARNING - No historical data for symbol: 011NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:53,619 - WARNING - No data found for the provided ISIN code: DUMMYSAN006
+Upstox - 2HCB67 - 2024-12-23 10:40:53,649 - WARNING - Historical data for exchange token: 14751 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:53,649 - INFO - Historical data for: 14751 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:53,900 - WARNING - No historical data for symbol: 021NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:54,015 - WARNING - No data found for the provided ISIN code: DUMMYSAN009
+Upstox - 2HCB67 - 2024-12-23 10:40:54,051 - WARNING - Historical data for exchange token: 14758 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:40:54,051 - INFO - Historical data for: 14758 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:54,302 - WARNING - No historical data for symbol: 051NSETEST
+Upstox - 2HCB67 - 2024-12-23 10:40:54,974 - INFO - Historical data for: 1594 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:56,233 - INFO - Historical data for: 14672 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:57,047 - INFO - Historical data for: 11373 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:57,810 - INFO - Historical data for: 422 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:58,560 - INFO - Historical data for: 404 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:40:59,350 - INFO - Historical data for: 10604 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:00,079 - INFO - Historical data for: 19913 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:00,876 - INFO - Historical data for: 16713 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:03,741 - INFO - Historical data for: 11703 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:04,502 - INFO - Historical data for: 10726 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:05,284 - INFO - Historical data for: 1922 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:06,470 - INFO - Historical data for: 694 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:07,222 - INFO - Historical data for: 324 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:07,932 - INFO - Historical data for: 10940 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:08,657 - INFO - Historical data for: 18096 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:09,370 - INFO - Historical data for: 20302 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:10,152 - INFO - Historical data for: 2142 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:10,892 - INFO - Historical data for: 21238 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:11,618 - INFO - Historical data for: 10738 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:12,393 - INFO - Historical data for: 1394 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:13,085 - INFO - Historical data for: 467 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:14,009 - INFO - Historical data for: 10794 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:14,802 - INFO - Historical data for: 31181 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:15,496 - INFO - Historical data for: 17939 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:16,897 - INFO - Historical data for: 13270 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:17,784 - INFO - Historical data for: 4668 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:18,515 - INFO - Historical data for: 3220 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:19,224 - INFO - Historical data for: 3506 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:19,985 - INFO - Historical data for: 4306 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:20,706 - INFO - Historical data for: 1348 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:23,909 - INFO - Historical data for: 9581 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:24,627 - INFO - Historical data for: 21808 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:25,361 - INFO - Historical data for: 1901 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:26,147 - INFO - Historical data for: 3432 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:26,950 - WARNING - Historical data for exchange token: 7 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:41:26,950 - INFO - Historical data for: 7 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:27,201 - WARNING - No historical data for symbol: AARTIIND
+Upstox - 2HCB67 - 2024-12-23 10:41:27,641 - INFO - Historical data for: 10243 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:28,445 - INFO - Historical data for: 3456 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:29,193 - INFO - Historical data for: 21614 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:30,021 - INFO - Historical data for: 1406 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:30,716 - INFO - Historical data for: 17438 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:31,335 - INFO - Historical data for: 11915 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:32,108 - INFO - Historical data for: 20242 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:32,801 - INFO - Historical data for: 18652 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:33,608 - INFO - Historical data for: 22 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:34,338 - INFO - Historical data for: 4684 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:35,060 - INFO - Historical data for: 5258 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:35,946 - INFO - Historical data for: 14418 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:38,767 - INFO - Historical data for: 14309 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:39,483 - INFO - Historical data for: 3363 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:40,259 - INFO - Historical data for: 739 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:40,980 - INFO - Historical data for: 1964 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:41,798 - INFO - Historical data for: 13538 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:42,586 - INFO - Historical data for: 5748 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:43,355 - INFO - Historical data for: 547 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:44,458 - INFO - Historical data for: 17534 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:45,231 - INFO - Historical data for: 4749 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:46,070 - INFO - Historical data for: 3045 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:46,845 - INFO - Historical data for: 19585 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:47,434 - INFO - Historical data for: 3563 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:48,231 - INFO - Historical data for: 5900 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:49,014 - INFO - Historical data for: 3499 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:49,849 - INFO - Historical data for: 3351 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:50,568 - WARNING - Current day's full market quote not added for exchange token: 2277.
+Upstox - 2HCB67 - 2024-12-23 10:41:50,569 - INFO - Historical data for: 2277 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:51,321 - INFO - Historical data for: 3787 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:52,058 - INFO - Historical data for: 24948 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:52,850 - INFO - Historical data for: 21690 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:53,431 - INFO - Historical data for: 18883 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:54,191 - INFO - Historical data for: 1363 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:54,896 - INFO - Historical data for: 17875 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:55,621 - INFO - Historical data for: 20825 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:56,304 - INFO - Historical data for: 1624 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:56,869 - WARNING - Historical data for exchange token: 3063 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:41:56,869 - INFO - Historical data for: 3063 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:57,120 - WARNING - No historical data for symbol: VEDL
+Upstox - 2HCB67 - 2024-12-23 10:41:57,584 - INFO - Historical data for: 22377 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:58,341 - INFO - Historical data for: 10753 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:59,089 - INFO - Historical data for: 583 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:41:59,677 - INFO - Historical data for: 9683 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:00,650 - INFO - Historical data for: 11872 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:01,501 - INFO - Historical data for: 18564 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:02,191 - INFO - Historical data for: 383 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:02,854 - INFO - Historical data for: 15355 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:03,675 - INFO - Historical data for: 3518 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:04,495 - INFO - Historical data for: 3273 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:05,299 - INFO - Historical data for: 5701 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:06,093 - INFO - Historical data for: 685 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:06,959 - WARNING - Current day's full market quote not added for exchange token: 7229.
+Upstox - 2HCB67 - 2024-12-23 10:42:06,959 - INFO - Historical data for: 7229 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:07,550 - INFO - Historical data for: 312 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:08,249 - WARNING - Current day's full market quote not added for exchange token: 10447.
+Upstox - 2HCB67 - 2024-12-23 10:42:08,249 - INFO - Historical data for: 10447 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:08,919 - INFO - Historical data for: 11236 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:09,686 - INFO - Historical data for: 15083 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:10,479 - WARNING - Current day's full market quote not added for exchange token: 3718.
+Upstox - 2HCB67 - 2024-12-23 10:42:10,479 - INFO - Historical data for: 3718 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:11,234 - INFO - Historical data for: 1023 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:12,025 - INFO - Historical data for: 18391 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:12,628 - INFO - Historical data for: 1232 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:13,442 - WARNING - Current day's full market quote not added for exchange token: 10440.
+Upstox - 2HCB67 - 2024-12-23 10:42:13,442 - INFO - Historical data for: 10440 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:14,248 - INFO - Historical data for: 18365 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:14,889 - INFO - Historical data for: 15332 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:15,651 - INFO - Historical data for: 4745 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:16,474 - INFO - Historical data for: 637 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:17,548 - INFO - Historical data for: 4204 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:18,266 - WARNING - Current day's full market quote not added for exchange token: 13310.
+Upstox - 2HCB67 - 2024-12-23 10:42:18,266 - INFO - Historical data for: 13310 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:18,987 - WARNING - Historical data for exchange token: 6994 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:42:18,988 - INFO - Historical data for: 6994 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:19,239 - WARNING - No historical data for symbol: BSOFT
+Upstox - 2HCB67 - 2024-12-23 10:42:19,706 - INFO - Historical data for: 21951 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:20,472 - INFO - Historical data for: 23650 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:21,248 - INFO - Historical data for: 17971 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:21,987 - INFO - Historical data for: 14366 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:22,643 - WARNING - Current day's full market quote not added for exchange token: 13528.
+Upstox - 2HCB67 - 2024-12-23 10:42:22,643 - INFO - Historical data for: 13528 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:23,949 - WARNING - Current day's full market quote not added for exchange token: 6656.
+Upstox - 2HCB67 - 2024-12-23 10:42:23,949 - INFO - Historical data for: 6656 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:24,865 - INFO - Historical data for: 17903 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:25,552 - WARNING - Current day's full market quote not added for exchange token: 2319.
+Upstox - 2HCB67 - 2024-12-23 10:42:25,552 - INFO - Historical data for: 2319 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:26,313 - WARNING - Current day's full market quote not added for exchange token: 2475.
+Upstox - 2HCB67 - 2024-12-23 10:42:26,313 - INFO - Historical data for: 2475 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:27,016 - WARNING - Current day's full market quote not added for exchange token: 13611.
+Upstox - 2HCB67 - 2024-12-23 10:42:27,016 - INFO - Historical data for: 13611 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:27,786 - WARNING - Current day's full market quote not added for exchange token: 10217.
+Upstox - 2HCB67 - 2024-12-23 10:42:27,786 - INFO - Historical data for: 10217 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:28,614 - INFO - Historical data for: 15313 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:29,334 - INFO - Historical data for: 2029 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:30,084 - INFO - Historical data for: 2181 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:30,802 - WARNING - Current day's full market quote not added for exchange token: 4244.
+Upstox - 2HCB67 - 2024-12-23 10:42:30,802 - INFO - Historical data for: 4244 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:31,596 - INFO - Historical data for: 236 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:32,411 - INFO - Historical data for: 4503 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:33,207 - INFO - Historical data for: 1633 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:33,987 - INFO - Historical data for: 11630 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:35,274 - INFO - Historical data for: 17818 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:36,001 - WARNING - Historical data for exchange token: 9819 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:42:36,001 - INFO - Historical data for: 9819 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:36,252 - WARNING - No historical data for symbol: HAVELLS
+Upstox - 2HCB67 - 2024-12-23 10:42:36,741 - INFO - Historical data for: 220 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:37,434 - WARNING - Historical data for exchange token: 2263 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:42:37,435 - INFO - Historical data for: 2263 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:37,686 - WARNING - No historical data for symbol: BANDHANBNK
+Upstox - 2HCB67 - 2024-12-23 10:42:38,140 - INFO - Historical data for: 11403 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:38,798 - INFO - Historical data for: 1997 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:39,361 - INFO - Historical data for: 342 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:40,209 - INFO - Historical data for: 25780 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:40,970 - WARNING - Current day's full market quote not added for exchange token: 13147.
+Upstox - 2HCB67 - 2024-12-23 10:42:40,970 - INFO - Historical data for: 13147 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:41,635 - INFO - Historical data for: 6545 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:42,429 - INFO - Historical data for: 13 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:43,137 - INFO - Historical data for: 17963 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:43,762 - WARNING - Current day's full market quote not added for exchange token: 5097.
+Upstox - 2HCB67 - 2024-12-23 10:42:43,762 - INFO - Historical data for: 5097 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:44,378 - INFO - Historical data for: 1660 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:45,100 - WARNING - Historical data for exchange token: 9590 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:42:45,100 - INFO - Historical data for: 9590 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:45,351 - WARNING - No historical data for symbol: POLYCAB
+Upstox - 2HCB67 - 2024-12-23 10:42:45,838 - INFO - Historical data for: 275 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:46,591 - WARNING - Current day's full market quote not added for exchange token: 2031.
+Upstox - 2HCB67 - 2024-12-23 10:42:46,591 - INFO - Historical data for: 2031 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:47,355 - INFO - Historical data for: 157 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:48,170 - INFO - Historical data for: 212 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:48,843 - WARNING - Current day's full market quote not added for exchange token: 2955.
+Upstox - 2HCB67 - 2024-12-23 10:42:48,843 - INFO - Historical data for: 2955 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:49,568 - INFO - Historical data for: 3426 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:50,321 - INFO - Historical data for: 19943 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:51,014 - INFO - Historical data for: 9599 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:52,110 - WARNING - Current day's full market quote not added for exchange token: 2043.
+Upstox - 2HCB67 - 2024-12-23 10:42:52,110 - INFO - Historical data for: 2043 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:53,024 - INFO - Historical data for: 1512 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:53,691 - WARNING - Historical data for exchange token: 4963 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:42:53,692 - INFO - Historical data for: 4963 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:53,943 - WARNING - No historical data for symbol: ICICIBANK
+Upstox - 2HCB67 - 2024-12-23 10:42:54,508 - INFO - Historical data for: 11287 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:55,230 - INFO - Historical data for: 263 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:56,092 - WARNING - Current day's full market quote not added for exchange token: 4067.
+Upstox - 2HCB67 - 2024-12-23 10:42:56,092 - INFO - Historical data for: 4067 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:56,833 - INFO - Historical data for: 335 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:57,629 - INFO - Historical data for: 11483 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:58,328 - INFO - Historical data for: 29135 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:59,121 - WARNING - Current day's full market quote not added for exchange token: 2412.
+Upstox - 2HCB67 - 2024-12-23 10:42:59,122 - INFO - Historical data for: 2412 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:42:59,880 - INFO - Historical data for: 6066 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:00,501 - INFO - Historical data for: 11184 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:01,130 - INFO - Historical data for: 11351 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:01,864 - INFO - Historical data for: 760 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:02,639 - INFO - Historical data for: 163 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:03,397 - WARNING - Historical data for exchange token: 25 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:43:03,398 - INFO - Historical data for: 25 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:03,648 - WARNING - No historical data for symbol: ADANIENT
+Upstox - 2HCB67 - 2024-12-23 10:43:04,180 - INFO - Historical data for: 17869 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:04,935 - INFO - Historical data for: 11723 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:05,839 - WARNING - Current day's full market quote not added for exchange token: 3721.
+Upstox - 2HCB67 - 2024-12-23 10:43:05,839 - INFO - Historical data for: 3721 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:06,582 - INFO - Historical data for: 15141 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:07,295 - INFO - Historical data for: 20374 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:08,062 - INFO - Historical data for: 317 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:08,819 - INFO - Historical data for: 21770 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:09,573 - INFO - Historical data for: 2303 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:10,271 - INFO - Historical data for: 438 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:11,131 - WARNING - Current day's full market quote not added for exchange token: 2885.
+Upstox - 2HCB67 - 2024-12-23 10:43:11,132 - INFO - Historical data for: 2885 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:11,851 - WARNING - Current day's full market quote not added for exchange token: 11262.
+Upstox - 2HCB67 - 2024-12-23 10:43:11,851 - INFO - Historical data for: 11262 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:12,522 - INFO - Historical data for: 1174 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:13,288 - INFO - Historical data for: 11536 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:15,683 - INFO - Historical data for: 13285 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:16,958 - WARNING - Current day's full market quote not added for exchange token: 13404.
+Upstox - 2HCB67 - 2024-12-23 10:43:16,958 - INFO - Historical data for: 13404 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:17,699 - INFO - Historical data for: 30108 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:18,589 - INFO - Historical data for: 1270 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:19,360 - INFO - Historical data for: 4717 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:20,088 - WARNING - Current day's full market quote not added for exchange token: 9480.
+Upstox - 2HCB67 - 2024-12-23 10:43:20,088 - INFO - Historical data for: 9480 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:20,801 - WARNING - Current day's full market quote not added for exchange token: 11532.
+Upstox - 2HCB67 - 2024-12-23 10:43:20,802 - INFO - Historical data for: 11532 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:21,586 - INFO - Historical data for: 17094 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:22,348 - INFO - Historical data for: 1333 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:22,706 - WARNING - No data found for the provided ISIN code: INE121A08PJ0
+Upstox - 2HCB67 - 2024-12-23 10:43:22,736 - WARNING - Historical data for exchange token: 19257 from: 2022-03-29 to: 2024-12-23 at interval: day not found.
+Upstox - 2HCB67 - 2024-12-23 10:43:22,736 - INFO - Historical data for: 19257 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:22,987 - WARNING - No historical data for symbol: CHOLAFIN
+Upstox - 2HCB67 - 2024-12-23 10:43:23,873 - INFO - Historical data for: 2963 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:24,653 - INFO - Historical data for: 628 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:25,418 - WARNING - Current day's full market quote not added for exchange token: 7406.
+Upstox - 2HCB67 - 2024-12-23 10:43:25,418 - INFO - Historical data for: 7406 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:26,261 - INFO - Historical data for: 24184 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:26,976 - WARNING - Current day's full market quote not added for exchange token: 3150.
+Upstox - 2HCB67 - 2024-12-23 10:43:26,976 - INFO - Historical data for: 3150 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:27,730 - INFO - Historical data for: 910 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:29,199 - WARNING - Current day's full market quote not added for exchange token: 10599.
+Upstox - 2HCB67 - 2024-12-23 10:43:29,199 - INFO - Historical data for: 10599 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:30,025 - INFO - Historical data for: 526 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:30,783 - INFO - Historical data for: 3411 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:31,393 - WARNING - Current day's full market quote not added for exchange token: 13751.
+Upstox - 2HCB67 - 2024-12-23 10:43:31,394 - INFO - Historical data for: 13751 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:32,124 - INFO - Historical data for: 14977 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:32,806 - INFO - Historical data for: 3405 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:33,616 - INFO - Historical data for: 14732 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:34,328 - WARNING - Current day's full market quote not added for exchange token: 2664.
+Upstox - 2HCB67 - 2024-12-23 10:43:34,328 - INFO - Historical data for: 2664 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:34,904 - INFO - Historical data for: 18921 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:35,668 - INFO - Historical data for: 772 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:36,479 - INFO - Historical data for: 958 from: 2022-03-29 to: 2024-12-23 retrieved.
+Upstox - 2HCB67 - 2024-12-23 10:43:36,847 - INFO - Futures contracts generated today: shape: (1, 24)
+┌─────────┬─────────────┬──────────┬──────┬───┬────────────┬─────────────┬────────────┬────────────┐
+│ segment ┆ name        ┆ exchange ┆ isin ┆ … ┆ asset_type ┆ underlying_ ┆ strike_pri ┆ security_t │
+│ ---     ┆ ---         ┆ ---      ┆ ---  ┆   ┆ ---        ┆ type        ┆ ce         ┆ ype        │
+│ str     ┆ str         ┆ str      ┆ str  ┆   ┆ str        ┆ ---         ┆ ---        ┆ ---        │
+│         ┆             ┆          ┆      ┆   ┆            ┆ str         ┆ f64        ┆ str        │
+╞═════════╪═════════════╪══════════╪══════╪═══╪════════════╪═════════════╪════════════╪════════════╡
+│ NSE_FO  ┆ BERGER      ┆ NSE      ┆ null ┆ … ┆ EQUITY     ┆ EQUITY      ┆ 0.0        ┆ null       │
+│         ┆ PAINTS (I)  ┆          ┆      ┆   ┆            ┆             ┆            ┆            │
+│         ┆ LTD         ┆          ┆      ┆   ┆            ┆             ┆            ┆            │
+└─────────┴─────────────┴──────────┴──────┴───┴────────────┴─────────────┴────────────┴────────────┘
+Upstox - 2HCB67 - 2024-12-23 10:43:39,096 - INFO - Qualified futures contracts: shape: (1, 24)
+┌─────────┬─────────────┬──────────┬──────┬───┬────────────┬─────────────┬────────────┬────────────┐
+│ segment ┆ name        ┆ exchange ┆ isin ┆ … ┆ asset_type ┆ underlying_ ┆ strike_pri ┆ security_t │
+│ ---     ┆ ---         ┆ ---      ┆ ---  ┆   ┆ ---        ┆ type        ┆ ce         ┆ ype        │
+│ str     ┆ str         ┆ str      ┆ str  ┆   ┆ str        ┆ ---         ┆ ---        ┆ ---        │
+│         ┆             ┆          ┆      ┆   ┆            ┆ str         ┆ f64        ┆ str        │
+╞═════════╪═════════════╪══════════╪══════╪═══╪════════════╪═════════════╪════════════╪════════════╡
+│ NSE_FO  ┆ BERGER      ┆ NSE      ┆ null ┆ … ┆ EQUITY     ┆ EQUITY      ┆ 0.0        ┆ null       │
+│         ┆ PAINTS (I)  ┆          ┆      ┆   ┆            ┆             ┆            ┆            │
+│         ┆ LTD         ┆          ┆      ┆   ┆            ┆             ┆            ┆            │
+└─────────┴─────────────┴──────────┴──────┴───┴────────────┴─────────────┴────────────┴────────────┘
+Upstox - 2HCB67 - 2024-12-23 10:43:39,123 - INFO - Cannot save new positions as expiry is under holding period.

@@ -1,0 +1,124 @@
+Upstox - 2HCB67 - 2024-12-17 03:40:03,107 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-17 03:40:03,107 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-17 03:40:03,107 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-17 03:40:05,613 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-17 03:40:06,198 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-17 03:40:11,198 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-17 03:40:11,394 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-17 03:40:11,395 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-17 03:40:12,059 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-17 03:40:12,060 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-17 03:40:12,694 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-17 03:40:22,699 - INFO - Current URL after login: http://localhost:8000/callback?code=KidJ3j
+Upstox - 2HCB67 - 2024-12-17 03:40:22,699 - INFO - Authorization code obtained: KidJ3j
+Upstox - 2HCB67 - 2024-12-17 03:40:22,759 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-17 03:40:23,682 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-17 03:40:23,682 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-17 03:40:24,792 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-17 03:40:24,792 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-17 03:40:24,792 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-17 03:40:25,682 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-17 03:40:25,682 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-17 03:45:01,000 - INFO - There are no orders to execute today.
+Upstox - 2HCB67 - 2024-12-17 10:40:03,344 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-17 10:40:03,345 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-17 10:40:03,346 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-17 10:40:05,716 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-17 10:40:06,291 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-17 10:40:11,291 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-17 10:40:11,498 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-17 10:40:11,498 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-17 10:40:12,171 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-17 10:40:12,171 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-17 10:40:12,813 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-17 10:40:22,818 - INFO - Current URL after login: http://localhost:8000/callback?code=Is8XSV
+Upstox - 2HCB67 - 2024-12-17 10:40:22,819 - INFO - Authorization code obtained: Is8XSV
+Upstox - 2HCB67 - 2024-12-17 10:40:22,879 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-17 10:40:23,787 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-17 10:40:23,788 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-17 10:40:24,893 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-17 10:40:24,893 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-17 10:40:24,893 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-17 10:40:25,795 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-17 10:40:25,795 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-17 10:40:25,847 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-17 10:40:25,982 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-17 10:40:25,983 - INFO - Position saved successfully for strategy: MomentumStrategyV1
+Upstox - 2HCB67 - 2024-12-17 10:40:25,983 - INFO - Position with tag: MomentumStrategyV1_39200_BUY_525_1733802663_ENTRY updated successfully.
+Upstox - 2HCB67 - 2024-12-17 10:40:26,137 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-17 10:40:26,138 - INFO - Position saved successfully for strategy: MomentumStrategyV1
+Upstox - 2HCB67 - 2024-12-17 10:40:26,138 - INFO - Position with tag: MomentumStrategyV1_39100_BUY_150_1733802663_ENTRY updated successfully.
+Upstox - 2HCB67 - 2024-12-17 10:40:26,287 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-17 10:40:26,287 - INFO - Position: {'entry_order_id': '241213040006483', 'exit_order_id': '', 'trading_symbol': 'MUTHOOTFIN24DECFUT', 'exchange_token': '39310', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 275, 'entry_price': 2111.75, 'exit_price': 0.0, 'entry_asset_price': 580731.25, 'exit_asset_price': 0.0, 'entry_timestamp': '2024-12-13 09:15:45', 'exit_timestamp': '2024-12-20 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 275, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 106730.59, 'exit_margin': 0, 'entry_brokerage': 49.36, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39310_BUY_150_1733802679_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-17 10:40:26,390 - INFO - Historical data for: 39200 from: 2022-03-23 to: 2024-12-17 retrieved.
+Upstox - 2HCB67 - 2024-12-17 10:40:26,409 - ERROR - Insufficient data to calculate the lower band price.
+Upstox - 2HCB67 - 2024-12-17 10:40:26,409 - ERROR - Error: unsupported operand type(s) for *: 'int' and 'NoneType'
+Upstox - 2HCB67 - 2024-12-17 10:40:26,409 - ERROR - Error calculating 3 std dev price for MAXHEALTH24DECFUT: unsupported operand type(s) for *: 'int' and 'NoneType'
+Traceback (most recent call last):
+  File "/home/admin/StrategyExecutionEngine/trading_system/app/strategies/momentumV1.py", line 581, in _calculate_guarded_unguarded_margins
+    lowerband_price = self._calculate_3_std_dev_price(df=hist_stock_df)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin/StrategyExecutionEngine/trading_system/app/strategies/momentumV1.py", line 694, in _calculate_3_std_dev_price
+    lower_band_pct = 0 - (3 * last_rolling_std_pct)
+                          ~~^~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'int' and 'NoneType'
+Upstox - 2HCB67 - 2024-12-17 10:40:26,412 - ERROR - Error occurred while calculating safeguarded margin: Error calculating 3 std dev price for MAXHEALTH24DECFUT: unsupported operand type(s) for *: 'int' and 'NoneType'
+Traceback (most recent call last):
+  File "/home/admin/StrategyExecutionEngine/trading_system/app/strategies/momentumV1.py", line 581, in _calculate_guarded_unguarded_margins
+    lowerband_price = self._calculate_3_std_dev_price(df=hist_stock_df)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin/StrategyExecutionEngine/trading_system/app/strategies/momentumV1.py", line 694, in _calculate_3_std_dev_price
+    lower_band_pct = 0 - (3 * last_rolling_std_pct)
+                          ~~^~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'int' and 'NoneType'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/admin/StrategyExecutionEngine/trading_system/app/strategies/momentumV1.py", line 585, in _calculate_guarded_unguarded_margins
+    raise ValueError(error_msg)
+ValueError: Error calculating 3 std dev price for MAXHEALTH24DECFUT: unsupported operand type(s) for *: 'int' and 'NoneType'
+Upstox - 2HCB67 - 2024-12-17 10:40:26,412 - ERROR - Error occured while processing exits: Error calculating 3 std dev price for MAXHEALTH24DECFUT: unsupported operand type(s) for *: 'int' and 'NoneType'
+Upstox - 2HCB67 - 2024-12-17 10:40:26,412 - ERROR - Error during strategy execution: Error occured while processing exits: Error calculating 3 std dev price for MAXHEALTH24DECFUT: unsupported operand type(s) for *: 'int' and 'NoneType'
+Upstox - 2HCB67 - 2024-12-17 23:06:30,075 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-17 23:06:30,075 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-17 23:06:30,075 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-17 23:06:32,319 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-17 23:06:32,896 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-17 23:06:37,897 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-17 23:06:37,899 - ERROR - Error during Upstox login: HTTPConnectionPool(host='localhost', port=46237): Max retries exceeded with url: /session/4741ede54cdcf3f221d3ef250d9ed9fb/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8eb483c310>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Upstox - 2HCB67 - 2024-12-17 23:06:37,902 - ERROR - Initialization failed: HTTPConnectionPool(host='localhost', port=46237): Max retries exceeded with url: /session/4741ede54cdcf3f221d3ef250d9ed9fb/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8eb483c310>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Upstox - 2HCB67 - 2024-12-17 23:06:37,902 - ERROR - Failed to initialize MomentumStrategyV1 for broker: Upstox, account: 2HCB67. Error: HTTPConnectionPool(host='localhost', port=46237): Max retries exceeded with url: /session/4741ede54cdcf3f221d3ef250d9ed9fb/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8eb483c310>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Upstox - 2HCB67 - 2024-12-17 23:06:59,486 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-17 23:06:59,486 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-17 23:06:59,486 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-17 23:06:59,803 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-17 23:07:00,253 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-17 23:07:05,253 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-17 23:07:05,453 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-17 23:07:05,453 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-17 23:07:06,140 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-17 23:07:06,140 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-17 23:07:06,784 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-17 23:07:16,790 - INFO - Current URL after login: http://localhost:8000/callback?code=YMWq-g
+Upstox - 2HCB67 - 2024-12-17 23:07:16,790 - INFO - Authorization code obtained: YMWq-g
+Upstox - 2HCB67 - 2024-12-17 23:07:16,850 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-17 23:07:17,753 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-17 23:07:17,753 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-17 23:07:18,874 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-17 23:07:18,874 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-17 23:07:18,874 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-17 23:07:19,764 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-17 23:07:19,764 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-17 23:07:19,801 - ERROR - Failed to retrieve balance response: 423 - {"status":"error","errors":[{"errorCode":"UDAPI100072","message":"The Funds service is accessible from 5:30 AM to 12:00 AM IST daily. Please try again during these service hours.","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100072","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-17 23:07:19,801 - ERROR - Exception while retrieving balance: Failed to retrieve balance response: 423 - {"status":"error","errors":[{"errorCode":"UDAPI100072","message":"The Funds service is accessible from 5:30 AM to 12:00 AM IST daily. Please try again during these service hours.","propertyPath":null,"invalidValue":null,"error_code":"UDAPI100072","property_path":null,"invalid_value":null}]}
+Upstox - 2HCB67 - 2024-12-17 23:07:19,931 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2024-12-17 23:07:19,931 - INFO - Position: {'entry_order_id': '241213040006483', 'exit_order_id': '', 'trading_symbol': 'MUTHOOTFIN24DECFUT', 'exchange_token': '39310', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 275, 'entry_price': 2111.75, 'exit_price': 0.0, 'entry_asset_price': 580731.25, 'exit_asset_price': 0.0, 'entry_timestamp': '2024-12-13 09:15:45', 'exit_timestamp': '2024-12-20 00:00:00', 'status': 'open', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 275, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 106730.59, 'exit_margin': 0, 'entry_brokerage': 49.36, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_39310_BUY_150_1733802679_ENTRY'} did not meet exit condition, skipping...
+Upstox - 2HCB67 - 2024-12-17 23:07:19,931 - ERROR - Error occurred while calculating safeguarded margin: unsupported operand type(s) for -: 'float' and 'NoneType'
+Traceback (most recent call last):
+  File "/home/admin/StrategyExecutionEngine/trading_system/app/strategies/momentumV1.py", line 599, in _calculate_guarded_unguarded_margins
+    deposit_amount = total_safeguard_amount - available_balance
+                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'float' and 'NoneType'
+Upstox - 2HCB67 - 2024-12-17 23:07:19,932 - ERROR - Error occured while processing exits: unsupported operand type(s) for -: 'float' and 'NoneType'
+Upstox - 2HCB67 - 2024-12-17 23:07:19,932 - ERROR - Error during strategy execution: Error occured while processing exits: unsupported operand type(s) for -: 'float' and 'NoneType'

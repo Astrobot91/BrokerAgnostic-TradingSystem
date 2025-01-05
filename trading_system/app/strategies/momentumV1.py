@@ -1,3 +1,4 @@
+import sys
 import time
 import asyncio
 import polars as pl
@@ -12,10 +13,10 @@ from app.execution.trade_executor import TradeExecutor
 from app.portfolio.portfolio_manager import PortfolioManager
 from app.data.datafeed import BrokerDataFeed, FundamentalDataFeed
 from app.config import STRATEGY_CONFIGS
+from typing import List, Dict, Any, Tuple
 
 
 ist = ZoneInfo('Asia/Kolkata')
-POSITION_ID = int(time.time())
 MARKET_OPENING_TIME = datetime.today().replace(hour=3, minute=45, second=1, microsecond=0).astimezone(ist)
 SIGNAL_DATE = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
@@ -24,6 +25,8 @@ class MomentumStrategyV1(BaseStrategy):
     Momentum Strategy Version 1:
     Identifies stocks that have hit their 52-week high or low and generates trading signals based on these events.
     """
+    BROKERAGE_BUFFER = 1000
+
     def __init__(self,
                  executor_broker_name: str,
                  executor_account_name: str,
@@ -87,7 +90,10 @@ class MomentumStrategyV1(BaseStrategy):
             await self.trade_executor.remove_access_token()
 
             if self.is_evening():
-                await self._check_exits()        
+                '''
+                NOTE: Currently using UNSAFE BALANCE!
+                '''
+                safe_balance, unsafe_balance = await self._check_exits()  
                 open_positions = await self.portfolio_manager.load_positions(status='open')
                 no_of_open_positions = len(open_positions)
                 qualified_futures, nearest_expiry = await self._get_recent_expiry_futures()
@@ -99,12 +105,16 @@ class MomentumStrategyV1(BaseStrategy):
                 
                 exit_date = await self._get_exit_date(entry_date=SIGNAL_DATE + timedelta(days=1))
                 if exit_date.date() <= nearest_expiry.date():
-                    await self._save_new_positions(qualified_futures, no_of_open_positions)
+                    if unsafe_balance:
+                        await self._save_new_positions(qualified_futures, no_of_open_positions, unsafe_balance)
+                    else:
+                        self.logger.warning(f'There are no postions open currently.')
                 else:
                     self.logger.info(f'Cannot save new positions as expiry is under holding period.')
 
             if self.is_morning():
                 while True:
+                    print(datetime.now(ist), MARKET_OPENING_TIME)
                     if datetime.now(ist) > MARKET_OPENING_TIME:
                         await self._execute_trades()
                         break
@@ -159,7 +169,6 @@ class MomentumStrategyV1(BaseStrategy):
             if not stock_df_store:
                 self.logger.info("No historical data available to generate signals.")
                 return None
-
             stock_data = pl.concat(stock_df_store)
             stock_data = stock_data.filter(
                 (pl.col('datetime').dt.date() == SIGNAL_DATE) &
@@ -178,7 +187,7 @@ class MomentumStrategyV1(BaseStrategy):
             self.logger.error(f"Error generating signals: {e}")
             raise Exception(f"Error generating signals: {e}")
 
-    async def _get_recent_expiry_futures(self) -> tuple[pl.DataFrame, datetime]:
+    async def _get_recent_expiry_futures(self) -> Tuple[pl.DataFrame, datetime]:
         """
         Retrieves futures contracts that are nearest to expiry and meet the holding period criteria.
         """
@@ -197,7 +206,29 @@ class MomentumStrategyV1(BaseStrategy):
                     return_dtype=pl.Datetime
                 ).alias('expiry')
             )
-            nearest_expiry = master_file_slice['expiry'].min()
+            master_file = self.instrument_df
+            master_file = master_file.fill_nan(0)
+            master_file = master_file.filter(
+                (pl.col('expiry') != 0) &
+                (pl.col('instrument_type') == 'FUT') &
+                (pl.col('underlying_type') == 'EQUITY')
+            )
+            master_file = master_file.with_columns(
+                (pl.col('expiry').cast(pl.Int64)),
+                pl.from_epoch(pl.col('expiry'), time_unit='ms').alias('expiry_date')
+            )
+            master_file = master_file.with_columns(
+                pl.col('expiry_date').dt.year().alias('year'),
+                pl.col('expiry_date').dt.month().alias('month')
+            )
+            groups = master_file.group_by(['year', 'month']).agg(
+                pl.col('expiry_date').max().alias('max_expiry_date')
+            )
+            nearest_expiry_row = groups.filter(
+                (pl.col('year') == date.today().year) &
+                (pl.col('month') == date.today().month)
+            )
+            nearest_expiry = nearest_expiry_row.select(pl.col('max_expiry_date')).item(0, 0)
             futures_slice = master_file_slice.filter(pl.col('expiry') == nearest_expiry)
 
             message_details = signals.join(
@@ -208,10 +239,13 @@ class MomentumStrategyV1(BaseStrategy):
                             ).drop(["trading_symbol", "exchange_token_right"]).rename({
                             "trading_symbol_right": "trading_symbol"
                             })
-                                
+            
+            entry_datetime = await self._get_entry_date(SIGNAL_DATE + timedelta(days=1))
+            exit_datetime = await self._get_exit_date(entry_date=entry_datetime)
+            exit_datetime += timedelta(days=1)
             if not message_details.is_empty():
                 self.logger.info(f'Futures contracts generated today: {futures_slice}')
-                telegram_msg = f'Signals for : {(SIGNAL_DATE + timedelta(days=1)).replace(hour=9, minute=15, second=0)}\n'
+                telegram_msg = f'NEW SIGNALS:\n\nEntry Date: {entry_datetime.date()} Open\nExit Date: {exit_datetime.date()} Open\n'
                 i = 1
                 column_names = message_details.columns
                 for row in message_details.rows():
@@ -224,7 +258,7 @@ class MomentumStrategyV1(BaseStrategy):
                     telegram_msg += f"\n{i}. {row_dict['underlying_symbol']}\n - ContractName: {row_dict['trading_symbol']}\n - Direction: {direction}\n - LotSize: {row_dict['lot_size']}\n - MarketCap: {row_dict['marketcap']}\n"
                     i += 1
                 telegram_msg += f'\nSignal Provider details:\nBroker: {self.datafeed_broker_name}\nAccount: {self.datafeed_account_name}'
-                broadcast_signal(signal=telegram_msg)
+                broadcast_signal(telegram_msg)
                 return futures_slice, nearest_expiry
             else:
                 self.logger.info('No futures contracts found for the nearest expiry.')
@@ -235,42 +269,40 @@ class MomentumStrategyV1(BaseStrategy):
 
     async def _save_new_positions(self,
                                   qualified_instruments: pl.DataFrame,
-                                  no_of_open_positions: int) -> None:
+                                  no_of_open_positions: int,
+                                  available_balance: float) -> None:
         """
         Saves new positions.
         """
         space_left_in_portfolio = self.strategy_config.get('PORTFOLIO_SIZE') - no_of_open_positions
-        available_margin = ...
-        # CHECK FOR TOMMORROWS EXITS, IF ANY STOCKS ARE EXITING TOMMORROW, RECORD THEIR MARGIN
-        # BUT THIS HAS A FLAW, WHAT IF THE CURRENT POSITION SUFFERS FROM GAPDOWN TOMMORROW? 
-        
-        available_balance = await self.trade_executor.get_funds_and_margin()
         self.logger.info(f"Space left in the portfolio: {space_left_in_portfolio}")
 
         try:
             counter = 0
             total_charges = 0
             columns = qualified_instruments.columns
+            
+            message = f"NEW POSITIONS STATUS:\n"
             for row in qualified_instruments.rows():
+                row_dict = dict(zip(columns, row))
+                trading_symbol = row_dict['trading_symbol']
+                exchange_token = row_dict['exchange_token']
+                exchange = row_dict['exchange']
+                order_type = 'MARKET'
+                transaction_type = 'BUY'
+                product = 'D'
+                validity = 'DAY'
+                quantity = row_dict['lot_size']
+                entry_timestamp = SIGNAL_DATE + timedelta(days=1)
+                exit_timestamp = await self._get_exit_date(entry_date=SIGNAL_DATE + timedelta(days=1))
+                status = 'execute'
+                tag = f'{self.strategy_name}_{exchange_token}_{transaction_type}_{quantity}_{int(time.time())}_ENTRY'
+            
                 if counter >= space_left_in_portfolio:
-                    self.logger.info(f"No space left in the portfolio for the signals.")
+                    msg = f"No space left in the portfolio to save next positions."
+                    self.logger.info(msg)
                     break
                 else:
-                    row_dict = dict(zip(columns, row))
-
-                    trading_symbol = row_dict['trading_symbol']
-                    exchange_token = row_dict['exchange_token']
-                    exchange = row_dict['exchange']
-                    order_type = 'MARKET'
-                    transaction_type = 'BUY'
-                    product = 'D'
-                    validity = 'DAY'
-                    quantity = row_dict['lot_size']
-                    entry_timestamp = SIGNAL_DATE + timedelta(days=1)
-                    exit_timestamp = await self._get_exit_date(entry_date=SIGNAL_DATE + timedelta(days=1))
-                    status = 'execute'
-                    tag = f'{self.strategy_name}_{exchange_token}_{transaction_type}_{quantity}_{POSITION_ID}_ENTRY'
-
                     margin = await self.trade_executor.calculate_margin(exchange_token=exchange_token,
                                                                         quantity=quantity,
                                                                         product=product,
@@ -296,9 +328,16 @@ class MomentumStrategyV1(BaseStrategy):
                                                                 entry_brokerage=brokerage,
                                                                 status=status,
                                                                 tag=tag)
+                        
+                        self.logger.info(f'Saved position: {tag} successfully.')
+                        message += f'\n{counter+1}. {trading_symbol}\n   Position saved successfully.\n'
                     else:
-                        self.logger.error(f'Could not save order: {tag} due to insufficient balance.')
+                        self.logger.error(f'Could not save position: {tag} due to insufficient balance. Please add Rs. {round(total_charges - available_balance + 1000, 2)} to save this position.')
+                        message += f'\n{counter+1}. {trading_symbol}\n   Position not saved: Insufficient balance.\n   Required Balance: Rs. {round(total_charges - available_balance + 1000, 2)}.\n'
                 counter += 1
+            
+            if space_left_in_portfolio:
+                broadcast_signal(message)
         except Exception as e:
             self.logger.exception(f"Error saving new positions: {e}")
 
@@ -369,6 +408,7 @@ class MomentumStrategyV1(BaseStrategy):
                             entry_asset_price = order_details['average_price'] * position['quantity']
                             await self.portfolio_manager.update_position(tag=position['tag'],
                                                                          updates={
+                                                                             "trading_symbol": order_details['trading_symbol'],
                                                                              "entry_order_id": order_details['order_id'],
                                                                              "entry_price": order_details['average_price'],
                                                                              "entry_timestamp": order_details['order_timestamp'],
@@ -388,10 +428,14 @@ class MomentumStrategyV1(BaseStrategy):
         except Exception as e:
             self.logger.exception(f"Error executing trades: {e}")
 
-    async def _check_exits(self) -> list:
+    async def _check_exits(self) -> Tuple[float, float]:
         try:
             open_positions = await self.portfolio_manager.load_positions(status='open')
+            available_balance = await self.trade_executor.get_funds_and_margin()
+
             if open_positions:
+                total_brokerage = 0
+                exited_positions = []
                 for position_dict in open_positions:
                     transaction_type = 'SELL'
                     status = 'execute'
@@ -399,14 +443,13 @@ class MomentumStrategyV1(BaseStrategy):
                     sl = position_dict['exit_price'] - ((position_dict['exit_price']) * (self.strategy_config.get('STOP_LOSS')))
                     ohlc_quote = await self.brokerdatafeed.ohlc_quote(exchange_token=position_dict['exchange_token'], interval='1d')
                     low = ohlc_quote['low']
-                    
-                    total_brokerage = 0
+                    close = ohlc_quote['close']
+
                     exit_brokerage = await self.trade_executor.calculate_brokerage(exchange_token=position_dict['exchange_token'],
                                                                                    quantity=position_dict['quantity'],
                                                                                    product=position_dict['product'],
                                                                                    transaction_type=transaction_type)
 
-                    available_balance = await self.trade_executor.get_funds_and_margin()
                     if (datetime.today() >= exit_date) or ((low <= sl)):
                         tag = position_dict['tag']
                         if (datetime.today() >= exit_date):
@@ -423,12 +466,27 @@ class MomentumStrategyV1(BaseStrategy):
                                                                             'tag': tag
                                                                             }
                                                                         )
+                            exited_positions.append({
+                                "exchange_token": position_dict['exchange_token'],
+                                "quantity": position_dict['quantity'],
+                                "product": position_dict['product'],
+                                "transaction_type": transaction_type,
+                                "trading_symbol": position_dict['trading_symbol'],
+                                "eod_close_price": close
+                            })               
                         else:
                             self.logger.error(f'Not enough balance for brokerage to execute the trade.')
                     else:
                         self.logger.info(f'Position: {position_dict} did not meet exit condition, skipping...')
+
+                safe_balance, unsafe_balance, message = await self._calculate_guarded_unguarded_margins(exited_positions=exited_positions,
+                                                                                                        available_balance=available_balance)
+                if exited_positions:    
+                    broadcast_signal(message)
+                self.logger.info(f"Expected Account Balance - Safe Balance: {safe_balance}, Unsafe Balance: {unsafe_balance}.")
+                return safe_balance, unsafe_balance
             else:
-                self.logger.warning(f'There are no postions open currently.')
+                return 0.0, 0.0
 
         except Exception as e:
             error_msg = f'Error occured while processing exits: {e}'
@@ -471,8 +529,120 @@ class MomentumStrategyV1(BaseStrategy):
                 trading_days.append(current_date)
             current_date += timedelta(days=1)
         return max(trading_days)
-    
-    def _process_historical_data(self, hist_stock_df: pl.DataFrame, trading_symbol: str, exchange_token: str, mcap: float) -> pl.DataFrame:
+
+    async def _get_entry_date(self, entry_date: datetime) -> datetime:
+        
+        market_holidays = await self.brokerdatafeed.market_holidays()
+        holiday_dates = list(market_holidays['date'])
+        
+        trading_days = []
+        current_date = entry_date
+        while len(trading_days) < self.strategy_config.get('HOLDING_PERIOD'):
+            if (current_date.weekday() < 5) and (current_date not in holiday_dates):
+                trading_days.append(current_date)
+            current_date += timedelta(days=1)
+        return min(trading_days)
+
+    async def _calculate_guarded_unguarded_margins(self,
+                                                   exited_positions: List[Dict[str, Any]],
+                                                   available_balance: float) -> Tuple[float, float, str]:
+        """
+        Calculates the total safeguard amount needed to avoid margin call situations. For each exited position,
+        this function:
+        - Fetches up to 1000 days of historical OHLC data.
+        - Calculates a lower-band price based on 3-standard-deviations from the rolling mean.
+        - Determines the margin requirement at the previous day’s close and at the lower-band price.
+        - The difference (eod_margin - lowerband_margin) is a recommended safeguard amount for that position.
+        """
+        to_date = date.today()
+        from_date = to_date - timedelta(days=1000)
+
+        total_eod_margin = 0.0
+        total_safeguard_amount = 0.0
+
+        message = "MARGIN SAFEGUARD:\n"
+        if exited_positions:
+            message += "\nBalance required to avoid margin calls for:"
+        else:
+            pass
+        
+        counter = 1
+        try:
+            for exited_position in exited_positions:
+                required_keys = ["exchange_token", "quantity", "product", "transaction_type", "eod_close_price", "trading_symbol"]
+                for key in required_keys:
+                    if key not in exited_position:
+                        error_msg = f"Key '{key}' is missing in exited_position: {exited_position}"
+                        self.logger.error(error_msg)
+                        raise ValueError(error_msg)
+
+                exchange_token = exited_position['exchange_token']
+                quantity = exited_position['quantity']
+                product = exited_position['product']
+                transaction_type = exited_position['transaction_type']
+                eod_close_price = exited_position['eod_close_price']
+                trading_symbol = exited_position['trading_symbol']
+
+                hist_stock_df = await self.brokerdatafeed.historical_data(
+                    exchange_token=exchange_token,
+                    interval='day',
+                    from_date=str(from_date),
+                    to_date=str(to_date)
+                )
+
+                if not isinstance(hist_stock_df, pl.DataFrame):
+                    error_msg = f"Historical data is not a Polars DataFrame for {trading_symbol}"
+                    self.logger.error(error_msg)
+                    raise ValueError(error_msg)
+
+                if hist_stock_df.height == 0:
+                    error_msg = f"No historical data returned for {trading_symbol}."
+                    self.logger.error(error_msg)
+                    raise ValueError(error_msg)
+
+                lowerband_price = self._calculate_3_std_dev_price(df=hist_stock_df)
+                if lowerband_price is None and pl.is_nan(lowerband_price):
+                    message += f"\n{counter}. {trading_symbol} - Error."
+                    counter += 1
+                else:
+                    eod_margin = await self.trade_executor.calculate_margin(exchange_token=exchange_token,
+                                                                            quantity=quantity,
+                                                                            product=product,
+                                                                            transaction_type=transaction_type,
+                                                                            price=eod_close_price)
+                    total_eod_margin += eod_margin
+                    safeguard_amount = (eod_close_price - lowerband_price) * quantity
+                    total_safeguard_amount += safeguard_amount
+                    message += f"\n{counter}. {trading_symbol} - Advised Balance: {round(safeguard_amount, 2)}"
+                    counter += 1
+
+            deposit_amount = total_safeguard_amount - available_balance
+            message += f"\n\nTotal safeguard amount: {round(total_safeguard_amount, 2)}\n"
+
+            unsafe_balance = total_eod_margin + available_balance
+            
+            if deposit_amount > 100:
+                message += f"\nPlease deposit Rs. {round(deposit_amount, 2)} + brokerage buffer amount: {self.BROKERAGE_BUFFER} to avoid potential margin calls."
+                safe_balance = total_safeguard_amount + total_eod_margin + available_balance + self.BROKERAGE_BUFFER
+                return safe_balance, unsafe_balance, message
+            elif 0 < deposit_amount <= 100:
+                message += f"\nDeposit the brokerage buffer amount Rs. {self.BROKERAGE_BUFFER} to stay safe."
+                safe_balance = total_eod_margin + available_balance + self.BROKERAGE_BUFFER
+                return safe_balance, unsafe_balance, message
+            else:
+                message += f"\nNo need to worry about margin calls, the account has sufficient balance."
+                safe_balance = available_balance + total_eod_margin
+                return safe_balance, unsafe_balance, message
+
+        except Exception as e:
+            self.logger.error(f"Error occurred while calculating safeguarded margin: {e}", exc_info=True)
+            raise
+
+    def _process_historical_data(self,
+                                 hist_stock_df: pl.DataFrame,
+                                 trading_symbol: str,
+                                 exchange_token: str,
+                                 mcap: float) -> pl.DataFrame:
         """
         Processes historical stock data by adding necessary columns and calculating signals.
         """
@@ -519,6 +689,43 @@ class MomentumStrategyV1(BaseStrategy):
             self.logger.exception(f"Error processing historical data for {trading_symbol}: {e}")
             return pl.DataFrame(data={}, strict=False)
 
+    def _calculate_3_std_dev_price(self, df: pl.DataFrame, window_size: int = 20) -> float:
+        """
+        Calculate the 3-std-dev lower band price based on daily percentage changes.
+        """
+        try:
+            if 'close' not in df.columns:
+                self.logger.error("Column 'close' does not exist in the DataFrame.")
+                return float('nan')
+
+            if len(df) < window_size:
+                self.logger.warning("Insufficient data to calculate rolling statistics. "
+                                    f"Need at least {window_size} rows, but got {len(df)}.")
+                return float('nan')
+
+            df = df.with_columns(
+                (pl.col("close").pct_change() * 100).alias("pct_change")
+            )
+            df = df.with_columns([
+                pl.col("pct_change").rolling_std(window_size=window_size).alias("rolling_std_pct")
+            ])
+
+            last_close = df["close"][-1]
+            last_rolling_std_pct = df["rolling_std_pct"][-1]
+
+            if last_close is None or last_rolling_std_pct is None:
+                self.logger.warning("Insufficient data to calculate the lower band price.")
+                return float('nan')
+            
+            lower_band_pct = 0 - (3 * last_rolling_std_pct)
+            lower_band_price = last_close * (1 + lower_band_pct / 100)
+
+            return lower_band_price
+
+        except Exception as e:
+            self.logger.error(f"Error: {e}")
+            return float('nan')
+
     def _epoch_to_naive_datetime(self, epoch_ms: int) -> datetime:
         """
         Converts epoch milliseconds to a naive datetime object.
@@ -547,7 +754,7 @@ class MomentumStrategyV1(BaseStrategy):
 
     def is_evening(self) -> bool:
         """
-        Checks if the current time falls within the morning time window (16:00 PM to 19:00 PM IST).
+        Checks if the current time falls within the morning time window (16:00 PM to 18:00 PM IST).
 
         Returns:
             bool: True if the current time is between 16:00 PM and 19:00 PM IST, False otherwise.
@@ -555,6 +762,6 @@ class MomentumStrategyV1(BaseStrategy):
         ist = ZoneInfo('Asia/Kolkata')
         current_time = datetime.now(ist)
         evening_start_time = current_time.replace(hour=16, minute=0, second=0, microsecond=0)
-        evening_end_time = current_time.replace(hour=23, minute=59, second=0, microsecond=0)
+        evening_end_time = current_time.replace(hour=18, minute=0, second=0, microsecond=0)
 
         return evening_start_time <= current_time < evening_end_time

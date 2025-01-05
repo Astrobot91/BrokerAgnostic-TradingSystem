@@ -1,0 +1,46 @@
+Upstox - 2HCB67 - 2024-12-30 03:40:02,241 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-30 03:40:02,242 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-30 03:40:02,242 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-30 03:40:04,469 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-30 03:40:05,026 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-30 03:40:10,026 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-30 03:40:10,229 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-30 03:40:10,229 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-30 03:40:10,902 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-30 03:40:10,902 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-30 03:40:11,540 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-30 03:40:21,546 - INFO - Current URL after login: http://localhost:8000/callback?code=0OJsAF
+Upstox - 2HCB67 - 2024-12-30 03:40:21,546 - INFO - Authorization code obtained: 0OJsAF
+Upstox - 2HCB67 - 2024-12-30 03:40:21,606 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-30 03:40:22,574 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-30 03:40:22,574 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-30 03:40:23,618 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-30 03:40:23,618 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-30 03:40:23,618 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-30 03:40:24,449 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-30 03:40:24,449 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-30 03:45:01,000 - INFO - There are no orders to execute today.
+Upstox - 2HCB67 - 2024-12-30 10:40:03,082 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-30 10:40:03,083 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-30 10:40:03,084 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2024-12-30 10:40:05,235 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2024-12-30 10:40:05,784 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2024-12-30 10:40:10,784 - INFO - Entering phone number
+Upstox - 2HCB67 - 2024-12-30 10:40:10,990 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2024-12-30 10:40:10,990 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2024-12-30 10:40:11,660 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2024-12-30 10:40:11,660 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2024-12-30 10:40:12,302 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2024-12-30 10:40:22,307 - INFO - Current URL after login: http://localhost:8000/callback?code=MAUBZI
+Upstox - 2HCB67 - 2024-12-30 10:40:22,307 - INFO - Authorization code obtained: MAUBZI
+Upstox - 2HCB67 - 2024-12-30 10:40:22,367 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2024-12-30 10:40:23,309 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2024-12-30 10:40:23,310 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2024-12-30 10:40:24,360 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2024-12-30 10:40:24,360 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2024-12-30 10:40:24,360 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2024-12-30 10:40:25,200 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2024-12-30 10:40:25,201 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2024-12-30 10:40:25,258 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2024-12-30 10:40:25,261 - ERROR - Error occured while processing exits: time data '' does not match format '%Y-%m-%d %H:%M:%S'
+Upstox - 2HCB67 - 2024-12-30 10:40:25,261 - ERROR - Error during strategy execution: Error occured while processing exits: time data '' does not match format '%Y-%m-%d %H:%M:%S'
