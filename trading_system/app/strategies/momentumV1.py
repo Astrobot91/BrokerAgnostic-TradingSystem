@@ -17,13 +17,13 @@ from typing import List, Dict, Any, Tuple
 
 
 ist = ZoneInfo('Asia/Kolkata')
-MARKET_OPENING_TIME = datetime.today().replace(hour=3, minute=45, second=1, microsecond=0).astimezone(ist)
+MARKET_OPENING_TIME = datetime.today().replace(hour=3, minute=45, second=0, microsecond=1000).astimezone(ist)
 SIGNAL_DATE = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
 
 class MomentumStrategyV1(BaseStrategy):
     """
     Momentum Strategy Version 1:
-    Identifies stocks that have hit their 52-week high or low and generates trading signals based on these events.
+    Identifies stocks that have hit their fresh 52-week high or low and generates trading signals based on these events.
     """
     BROKERAGE_BUFFER = 1000
 
@@ -52,25 +52,33 @@ class MomentumStrategyV1(BaseStrategy):
 
     async def initialize(self) -> None:
         try:
-            self.datafeed_broker = BrokerFactory.get_broker(broker_name=self.datafeed_broker_name,
-                                                            account_name=self.datafeed_account_name,
-                                                            logger=self.logger)
-            self.executor_broker = BrokerFactory.get_broker(broker_name=self.executor_broker_name,
-                                                            account_name=self.executor_account_name,
-                                                            logger=self.logger)
+            self.datafeed_broker = BrokerFactory.get_broker(
+                broker_name=self.datafeed_broker_name,
+                account_name=self.datafeed_account_name,
+                logger=self.logger
+                )
+            self.executor_broker = BrokerFactory.get_broker(
+                broker_name=self.executor_broker_name,
+                account_name=self.executor_account_name,
+                logger=self.logger
+                )
             await self.datafeed_broker.initialize()
             await self.executor_broker.initialize()
 
             self.fundamental_datafeed = FundamentalDataFeed(broker=self.datafeed_broker)
             self.brokerdatafeed = BrokerDataFeed(broker=self.datafeed_broker)
-            self.trade_executor = TradeExecutor(broker=self.executor_broker,
-                                                broker_name=self.executor_broker_name,
-                                                account_name=self.executor_account_name,
-                                                strategy_name=self.strategy_name)
-            self.portfolio_manager = PortfolioManager(broker=self.executor_broker,
-                                                      broker_name=self.executor_broker_name,
-                                                      account_name=self.executor_account_name,
-                                                      strategy_name=self.strategy_name)
+            self.trade_executor = TradeExecutor(
+                broker=self.executor_broker,
+                broker_name=self.executor_broker_name,
+                account_name=self.executor_account_name,
+                strategy_name=self.strategy_name
+                )
+            self.portfolio_manager = PortfolioManager(
+                broker=self.executor_broker,
+                broker_name=self.executor_broker_name,
+                account_name=self.executor_account_name,
+                strategy_name=self.strategy_name
+                )
             self.risk_manager = RiskManager(broker=self.executor_broker)
             self.instrument_df = self.brokerdatafeed.broker.instrument_df
             self.logger.info("MomentumStrategyV1 initialized successfully.")
@@ -163,7 +171,12 @@ class MomentumStrategyV1(BaseStrategy):
                     self.logger.warning(f"No historical data for symbol: {trading_symbol}")
                     continue
     
-                hist_stock_df = self._process_historical_data(hist_stock_df, trading_symbol, exchange_token, mcap)
+                hist_stock_df = self._process_historical_data(
+                    hist_stock_df,
+                    trading_symbol,
+                    exchange_token,
+                    mcap
+                    )
                 stock_df_store.append(hist_stock_df)
 
             if not stock_df_store:
@@ -259,6 +272,7 @@ class MomentumStrategyV1(BaseStrategy):
                     i += 1
                 telegram_msg += f'\nSignal Provider details:\nBroker: {self.datafeed_broker_name}\nAccount: {self.datafeed_account_name}'
                 broadcast_signal(telegram_msg)
+                print(telegram_msg)
                 return futures_slice, nearest_expiry
             else:
                 self.logger.info('No futures contracts found for the nearest expiry.')
@@ -267,15 +281,18 @@ class MomentumStrategyV1(BaseStrategy):
             self.logger.exception(f"Error fetching recent expiry futures: {e}")
             return None
 
-    async def _save_new_positions(self,
-                                  qualified_instruments: pl.DataFrame,
-                                  no_of_open_positions: int,
-                                  available_balance: float) -> None:
+    async def _save_new_positions(
+            self,
+            qualified_instruments: pl.DataFrame,
+            no_of_open_positions: int,
+            available_balance: float
+            ) -> None:
         """
         Saves new positions.
         """
         space_left_in_portfolio = self.strategy_config.get('PORTFOLIO_SIZE') - no_of_open_positions
         self.logger.info(f"Space left in the portfolio: {space_left_in_portfolio}")
+        banned_stocks = ['42491']
 
         try:
             counter = 0
@@ -297,37 +314,47 @@ class MomentumStrategyV1(BaseStrategy):
                 exit_timestamp = await self._get_exit_date(entry_date=SIGNAL_DATE + timedelta(days=1))
                 status = 'execute'
                 tag = f'{self.strategy_name}_{exchange_token}_{transaction_type}_{quantity}_{int(time.time())}_ENTRY'
-            
-                if counter >= space_left_in_portfolio:
+
+                if exchange_token in banned_stocks:
+                    message += f'\n{counter+1}. {trading_symbol}\n   Banned Stock! Not saved.\n'
+                    continue
+
+                if (counter >= space_left_in_portfolio):
                     msg = f"No space left in the portfolio to save next positions."
                     self.logger.info(msg)
                     break
                 else:
-                    margin = await self.trade_executor.calculate_margin(exchange_token=exchange_token,
-                                                                        quantity=quantity,
-                                                                        product=product,
-                                                                        transaction_type=transaction_type)
-                    brokerage = await self.trade_executor.calculate_brokerage(exchange_token=exchange_token,
-                                                                              quantity=quantity,
-                                                                              product=product,
-                                                                              transaction_type=transaction_type)
+                    margin = await self.trade_executor.calculate_margin(
+                        exchange_token=exchange_token,
+                        quantity=quantity,
+                        product=product,
+                        transaction_type=transaction_type
+                        )
+                    brokerage = await self.trade_executor.calculate_brokerage(
+                        exchange_token=exchange_token,
+                        quantity=quantity,
+                        product=product,
+                        transaction_type=transaction_type
+                        )
                     charges_per_lot = margin + brokerage
                     total_charges += charges_per_lot
                     if available_balance > total_charges:
-                        await self.portfolio_manager.save_position(trading_symbol=trading_symbol,
-                                                                exchange_token=exchange_token,
-                                                                exchange=exchange,
-                                                                order_type=order_type,
-                                                                entry_transaction_type=transaction_type,
-                                                                product=product,
-                                                                validity=validity,
-                                                                quantity=quantity,
-                                                                entry_timestamp=str(entry_timestamp),
-                                                                exit_timestamp=str(exit_timestamp),
-                                                                entry_margin=margin,
-                                                                entry_brokerage=brokerage,
-                                                                status=status,
-                                                                tag=tag)
+                        await self.portfolio_manager.save_position(
+                            trading_symbol=trading_symbol,
+                            exchange_token=exchange_token,
+                            exchange=exchange,
+                            order_type=order_type,
+                            entry_transaction_type=transaction_type,
+                            product=product,
+                            validity=validity,
+                            quantity=quantity,
+                            entry_timestamp=str(entry_timestamp),
+                            exit_timestamp=str(exit_timestamp),
+                            entry_margin=margin,
+                            entry_brokerage=brokerage,
+                            status=status,
+                            tag=tag
+                            )
                         
                         self.logger.info(f'Saved position: {tag} successfully.')
                         message += f'\n{counter+1}. {trading_symbol}\n   Position saved successfully.\n'
@@ -338,6 +365,7 @@ class MomentumStrategyV1(BaseStrategy):
             
             if space_left_in_portfolio:
                 broadcast_signal(message)
+                print(message)
         except Exception as e:
             self.logger.exception(f"Error saving new positions: {e}")
 
@@ -351,76 +379,86 @@ class MomentumStrategyV1(BaseStrategy):
                 for position in execute_positions:
                     if position.get('tag').endswith('EXIT'):
                         status = 'closed'
-                        order_is_valid, exit_margin, exit_brokerage = await self.risk_manager.validate_order(exchange_token=position['exchange_token'],
-                                                                                                            transaction_type=position['exit_transaction_type'],
-                                                                                                            quantity=position['quantity'],
-                                                                                                            trade_type='exit',
-                                                                                                            product=position['product'])
+                        order_is_valid, exit_margin, exit_brokerage = await self.risk_manager.validate_order(
+                            exchange_token=position['exchange_token'],
+                            transaction_type=position['exit_transaction_type'],
+                            quantity=position['quantity'],
+                            trade_type='exit',
+                            product=position['product']
+                            )
                         if order_is_valid:
-                            order_response = await self.trade_executor.place_order(exchange_token=position['exchange_token'],
-                                                                                transaction_type=position['exit_transaction_type'],
-                                                                                quantity=position['quantity'],
-                                                                                product=position['product'],
-                                                                                validity=position['validity'],
-                                                                                order_type=position['order_type'],
-                                                                                tag=position['tag'])
+                            order_response = await self.trade_executor.place_order(
+                                exchange_token=position['exchange_token'],
+                                transaction_type=position['exit_transaction_type'],
+                                quantity=position['quantity'],
+                                product=position['product'],
+                                validity=position['validity'],
+                                order_type=position['order_type'],
+                                tag=position['tag']
+                                )
                             
                             order_details = await self.trade_executor.get_order_details(order_id=order_response['order_id'])
                             await self.trade_executor.save_order(order_details=order_details)                 
                         
                             exit_asset_price = position['quantity'] * order_details['average_price']
                             pnl = exit_asset_price - (position['entry_asset_price'] + exit_brokerage + position['entry_brokerage'])
-                            await self.portfolio_manager.update_position(tag=position['tag'],
-                                                                         updates={
-                                                                             "exit_order_id": order_details['order_id'],
-                                                                             "exit_price": order_details['average_price'],
-                                                                             "exit_timestamp": order_details['order_timestamp'],
-                                                                             "status": status,
-                                                                             "exit_disclosed_quantity": order_details['disclosed_quantity'],
-                                                                             "exit_filled_quantity": order_details['filled_quantity'],
-                                                                             "exit_pending_quantity": order_details['pending_quantity'],
-                                                                             "exit_asset_price": exit_asset_price,
-                                                                             "exit_margin": exit_margin,
-                                                                             "exit_brokerage": exit_brokerage,
-                                                                             "pnl": pnl
-                                                                            }
-                                                                        )
+                            await self.portfolio_manager.update_position(
+                                tag=position['tag'],
+                                updates={
+                                    "exit_order_id": order_details['order_id'],
+                                    "exit_price": order_details['average_price'],
+                                    "exit_timestamp": order_details['order_timestamp'],
+                                    "status": status,
+                                    "exit_disclosed_quantity": order_details['disclosed_quantity'],
+                                    "exit_filled_quantity": order_details['filled_quantity'],
+                                    "exit_pending_quantity": order_details['pending_quantity'],
+                                    "exit_asset_price": exit_asset_price,
+                                    "exit_margin": exit_margin,
+                                    "exit_brokerage": exit_brokerage,
+                                    "pnl": pnl
+                                }
+                            )
                 for position in execute_positions:
                     if position.get('tag').endswith('ENTRY'):
                         status = 'open'
-                        order_is_valid, entry_margin, entry_brokerage = await self.risk_manager.validate_order(exchange_token=position['exchange_token'],
-                                                                                                            transaction_type=position['entry_transaction_type'],
-                                                                                                            quantity=position['quantity'],
-                                                                                                            trade_type='entry',
-                                                                                                            product=position['product'])
+                        order_is_valid, entry_margin, entry_brokerage = await self.risk_manager.validate_order(
+                            exchange_token=position['exchange_token'],
+                            transaction_type=position['entry_transaction_type'],
+                            quantity=position['quantity'],
+                            trade_type='entry',
+                            product=position['product']
+                            )
                         if order_is_valid:
-                            order_response = await self.trade_executor.place_order(exchange_token=position['exchange_token'],
-                                                                                transaction_type=position['entry_transaction_type'],
-                                                                                quantity=position['quantity'],
-                                                                                product=position['product'],
-                                                                                validity=position['validity'],
-                                                                                order_type=position['order_type'],
-                                                                                tag=position['tag'])
+                            order_response = await self.trade_executor.place_order(
+                                exchange_token=position['exchange_token'],
+                                transaction_type=position['entry_transaction_type'],
+                                quantity=position['quantity'],
+                                product=position['product'],
+                                validity=position['validity'],
+                                order_type=position['order_type'],
+                                tag=position['tag']
+                                )
                             
                             order_details = await self.trade_executor.get_order_details(order_id=order_response['order_id'])
                             await self.trade_executor.save_order(order_details=order_details)             
                             
                             entry_asset_price = order_details['average_price'] * position['quantity']
-                            await self.portfolio_manager.update_position(tag=position['tag'],
-                                                                         updates={
-                                                                             "trading_symbol": order_details['trading_symbol'],
-                                                                             "entry_order_id": order_details['order_id'],
-                                                                             "entry_price": order_details['average_price'],
-                                                                             "entry_timestamp": order_details['order_timestamp'],
-                                                                             "status": status,
-                                                                             "entry_disclosed_quantity": order_details['disclosed_quantity'],
-                                                                             "entry_filled_quantity": order_details['filled_quantity'],
-                                                                             "entry_pending_quantity": order_details['pending_quantity'],
-                                                                             "entry_asset_price": entry_asset_price,
-                                                                             "entry_margin": entry_margin,
-                                                                             "entry_brokerage": entry_brokerage,
-                                                                            }
-                                                                        )
+                            await self.portfolio_manager.update_position(
+                                tag=position['tag'],
+                                updates={
+                                    "trading_symbol": order_details['trading_symbol'],
+                                    "entry_order_id": order_details['order_id'],
+                                    "entry_price": order_details['average_price'],
+                                    "entry_timestamp": order_details['order_timestamp'],
+                                    "status": status,
+                                    "entry_disclosed_quantity": order_details['disclosed_quantity'],
+                                    "entry_filled_quantity": order_details['filled_quantity'],
+                                    "entry_pending_quantity": order_details['pending_quantity'],
+                                    "entry_asset_price": entry_asset_price,
+                                    "entry_margin": entry_margin,
+                                    "entry_brokerage": entry_brokerage,
+                                }
+                            )
                         else:
                             self.logger.warning(f'Order Validation failed for order: {position}')
             else:
@@ -441,14 +479,19 @@ class MomentumStrategyV1(BaseStrategy):
                     status = 'execute'
                     exit_date = datetime.strptime(position_dict['exit_timestamp'], "%Y-%m-%d %H:%M:%S")
                     sl = position_dict['exit_price'] - ((position_dict['exit_price']) * (self.strategy_config.get('STOP_LOSS')))
-                    ohlc_quote = await self.brokerdatafeed.ohlc_quote(exchange_token=position_dict['exchange_token'], interval='1d')
+                    ohlc_quote = await self.brokerdatafeed.ohlc_quote(
+                        exchange_token=position_dict['exchange_token'],
+                        interval='1d'
+                        )
                     low = ohlc_quote['low']
                     close = ohlc_quote['close']
 
-                    exit_brokerage = await self.trade_executor.calculate_brokerage(exchange_token=position_dict['exchange_token'],
-                                                                                   quantity=position_dict['quantity'],
-                                                                                   product=position_dict['product'],
-                                                                                   transaction_type=transaction_type)
+                    exit_brokerage = await self.trade_executor.calculate_brokerage(
+                        exchange_token=position_dict['exchange_token'],
+                        quantity=position_dict['quantity'],
+                        product=position_dict['product'],
+                        transaction_type=transaction_type
+                        )
 
                     if (datetime.today() >= exit_date) or ((low <= sl)):
                         tag = position_dict['tag']
@@ -459,13 +502,14 @@ class MomentumStrategyV1(BaseStrategy):
                         
                         total_brokerage += exit_brokerage
                         if available_balance > total_brokerage:
-                            await self.portfolio_manager.update_position(tag=position_dict['tag'],
-                                                                        updates={
-                                                                            'status': status,
-                                                                            'exit_transaction_type': transaction_type,
-                                                                            'tag': tag
-                                                                            }
-                                                                        )
+                            await self.portfolio_manager.update_position(
+                                tag=position_dict['tag'],
+                                updates={
+                                    'status': status,
+                                    'exit_transaction_type': transaction_type,
+                                    'tag': tag
+                                    }
+                                )
                             exited_positions.append({
                                 "exchange_token": position_dict['exchange_token'],
                                 "quantity": position_dict['quantity'],
@@ -479,10 +523,13 @@ class MomentumStrategyV1(BaseStrategy):
                     else:
                         self.logger.info(f'Position: {position_dict} did not meet exit condition, skipping...')
 
-                safe_balance, unsafe_balance, message = await self._calculate_guarded_unguarded_margins(exited_positions=exited_positions,
-                                                                                                        available_balance=available_balance)
+                safe_balance, unsafe_balance, message = await self._calculate_guarded_unguarded_margins(
+                    exited_positions=exited_positions,
+                    available_balance=available_balance
+                    )
                 if exited_positions:    
                     broadcast_signal(message)
+                    print(message)
                 self.logger.info(f"Expected Account Balance - Safe Balance: {safe_balance}, Unsafe Balance: {unsafe_balance}.")
                 return safe_balance, unsafe_balance
             else:
@@ -569,7 +616,14 @@ class MomentumStrategyV1(BaseStrategy):
         counter = 1
         try:
             for exited_position in exited_positions:
-                required_keys = ["exchange_token", "quantity", "product", "transaction_type", "eod_close_price", "trading_symbol"]
+                required_keys = [
+                    "exchange_token",
+                    "quantity",
+                    "product",
+                    "transaction_type",
+                    "eod_close_price",
+                    "trading_symbol"
+                    ]
                 for key in required_keys:
                     if key not in exited_position:
                         error_msg = f"Key '{key}' is missing in exited_position: {exited_position}"
@@ -605,11 +659,13 @@ class MomentumStrategyV1(BaseStrategy):
                     message += f"\n{counter}. {trading_symbol} - Error."
                     counter += 1
                 else:
-                    eod_margin = await self.trade_executor.calculate_margin(exchange_token=exchange_token,
-                                                                            quantity=quantity,
-                                                                            product=product,
-                                                                            transaction_type=transaction_type,
-                                                                            price=eod_close_price)
+                    eod_margin = await self.trade_executor.calculate_margin(
+                        exchange_token=exchange_token,
+                        quantity=quantity,
+                        product=product,
+                        transaction_type=transaction_type,
+                        price=eod_close_price
+                        )
                     total_eod_margin += eod_margin
                     safeguard_amount = (eod_close_price - lowerband_price) * quantity
                     total_safeguard_amount += safeguard_amount

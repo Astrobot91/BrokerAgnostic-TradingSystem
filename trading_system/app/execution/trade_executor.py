@@ -1,7 +1,7 @@
 import os
 import json
 from app.brokers.base_broker import BaseBroker
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 
 ORDERS_FILE = 'orders.json'
@@ -30,18 +30,20 @@ class TradeExecutor:
         self.broker = broker
         self.logger = self.broker.logger
 
-    async def place_order(self,
-                          exchange_token: str,
-                          transaction_type: str,
-                          quantity: int,
-                          product: str,
-                          validity: str,
-                          order_type: str = 'MARKET',
-                          price: float = 0,
-                          trigger_price: float = 0,
-                          disclosed_quantity: int = 0,
-                          is_amo: bool = False,
-                          tag: str = '') -> Dict[str, str]:
+    async def place_order(
+            self,
+            exchange_token: str,
+            transaction_type: str,
+            quantity: int,
+            product: str,
+            validity: str,
+            order_type: str = 'MARKET',
+            price: float = 0,
+            trigger_price: float = 0,
+            disclosed_quantity: int = 0,
+            is_amo: bool = False,
+            tag: str = ''
+            ) -> Dict[str, str]:
         """
         Places a trade order with the specified broker.
 
@@ -82,14 +84,16 @@ class TradeExecutor:
             self.logger.error(error_msg)
             raise Exception(error_msg)
 
-    async def modify_order(self,
-                           order_id: str,
-                           quantity: int = None,
-                           price: float = None,
-                           order_type: str = None,
-                           trigger_price: float = None,
-                           disclosed_quantity: int = None,
-                           validity: str = None) -> Dict[str, str]:
+    async def modify_order(
+            self,
+            order_id: str,
+            quantity: int = None,
+            price: float = None,
+            order_type: str = None,
+            trigger_price: float = None,
+            disclosed_quantity: int = None,
+            validity: str = None
+            ) -> Dict[str, str]:
         """
         Modifies an existing order with the specified parameters.
 
@@ -201,12 +205,14 @@ class TradeExecutor:
             self.logger.error(error_msg)
             raise Exception(error_msg)
 
-    async def calculate_margin(self,
-                               exchange_token: str,
-                               quantity: int,
-                               product: str,
-                               transaction_type: str,
-                               price: float = None) -> float:
+    async def calculate_margin(
+            self,
+            exchange_token: str,
+            quantity: int,
+            product: str,
+            transaction_type: str,
+            price: float = None
+            ) -> float:
         """
         Asynchronously calculates the required margin for a specific trading instrument.
 
@@ -246,12 +252,14 @@ class TradeExecutor:
             self.logger.error(error_msg)
             raise Exception(error_msg)
         
-    async def calculate_brokerage(self,
-                                  exchange_token: str,
-                                  quantity: int,
-                                  product: str,
-                                  transaction_type: str,
-                                  price: float = 0) -> float:
+    async def calculate_brokerage(
+            self,
+            exchange_token: str,
+            quantity: int,
+            product: str,
+            transaction_type: str,
+            price: float = 0
+            ) -> float:
         """
         Asynchronously calculates the brokerage for the specified instrument.
 

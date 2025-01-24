@@ -1,0 +1,26 @@
+Upstox - 2HCB67 - 2025-01-24 03:40:02,859 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2025-01-24 03:40:02,859 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2025-01-24 03:40:02,860 - INFO - Creating WebDriver for Upstox login
+Upstox - 2HCB67 - 2025-01-24 03:40:04,999 - INFO - WebDriver created successfully
+Upstox - 2HCB67 - 2025-01-24 03:40:05,555 - INFO - Opened Upstox login page
+Upstox - 2HCB67 - 2025-01-24 03:40:10,555 - INFO - Entering phone number
+Upstox - 2HCB67 - 2025-01-24 03:40:10,758 - INFO - Phone number entered and OTP requested
+Upstox - 2HCB67 - 2025-01-24 03:40:10,758 - INFO - Entering TOTP
+Upstox - 2HCB67 - 2025-01-24 03:40:11,447 - INFO - TOTP entered and continued
+Upstox - 2HCB67 - 2025-01-24 03:40:11,447 - INFO - Entering 6-digit PIN code
+Upstox - 2HCB67 - 2025-01-24 03:40:12,088 - INFO - PIN code entered and continued
+Upstox - 2HCB67 - 2025-01-24 03:40:22,093 - INFO - Current URL after login: http://localhost:8000/callback?code=3QI2sK
+Upstox - 2HCB67 - 2025-01-24 03:40:22,094 - INFO - Authorization code obtained: 3QI2sK
+Upstox - 2HCB67 - 2025-01-24 03:40:22,153 - INFO - Exchanging authorization code for access token
+Upstox - 2HCB67 - 2025-01-24 03:40:23,177 - INFO - Access token obtained successfully
+Upstox - 2HCB67 - 2025-01-24 03:40:23,177 - INFO - Access token saved to tokens.json
+Upstox - 2HCB67 - 2025-01-24 03:40:24,391 - INFO - Initializing UpstoxBroker for 2HCB67
+Upstox - 2HCB67 - 2025-01-24 03:40:24,392 - INFO - Starting authentication process for Upstox
+Upstox - 2HCB67 - 2025-01-24 03:40:24,392 - INFO - Access token loaded from tokens.json
+Upstox - 2HCB67 - 2025-01-24 03:40:25,392 - INFO - MomentumStrategyV1 initialized successfully.
+Upstox - 2HCB67 - 2025-01-24 03:40:25,393 - INFO - Access token removed successfully.
+Upstox - 2HCB67 - 2025-01-24 03:45:00,048 - INFO - Margin details retrieved successfully.
+Upstox - 2HCB67 - 2025-01-24 03:45:00,133 - INFO - Brokerage details retrieved successfully.
+Upstox - 2HCB67 - 2025-01-24 03:45:00,262 - INFO - Funds and margin details retrieved successfully
+Upstox - 2HCB67 - 2025-01-24 03:45:00,262 - WARNING - Order: {'exchange_token': '36746', 'quantity': 375, 'product': 'D', 'transaction_type': 'BUY', 'price': 0} validation failed.
+Upstox - 2HCB67 - 2025-01-24 03:45:00,263 - WARNING - Order Validation failed for order: {'entry_order_id': '', 'exit_order_id': '', 'trading_symbol': 'BATAINDIA FUT 30 JAN 25', 'exchange_token': '36746', 'exchange': 'NSE', 'order_type': 'MARKET', 'sl': 0.0, 'target': 0.0, 'entry_transaction_type': 'BUY', 'exit_transaction_type': '', 'product': 'D', 'validity': 'DAY', 'quantity': 375, 'entry_price': 0.0, 'exit_price': 0.0, 'entry_asset_price': 0.0, 'exit_asset_price': 0.0, 'entry_timestamp': '2025-01-23 00:00:00', 'exit_timestamp': '2025-01-30 00:00:00', 'status': 'execute', 'variety': 'regular', 'entry_disclosed_quantity': 0, 'entry_filled_quantity': 0, 'entry_pending_quantity': 0, 'exit_disclosed_quantity': 0, 'exit_filled_quantity': 0, 'exit_pending_quantity': 0, 'entry_margin': 85682.53125, 'exit_margin': 0, 'entry_brokerage': 44.85, 'exit_brokerage': 0, 'pnl': 0, 'tag': 'MomentumStrategyV1_36746_BUY_375_1737542758_ENTRY'}

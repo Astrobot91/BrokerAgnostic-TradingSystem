@@ -102,18 +102,20 @@ class UpstoxBroker(BaseBroker):
         except Exception as e:
             raise Exception(f"Error fetching instrument data: {e}")
 
-    async def place_order(self,
-                          exchange_token: str,
-                          transaction_type: str,
-                          quantity: int,
-                          product: str,
-                          validity: str,
-                          order_type: str = 'MARKET',
-                          price: float = 0,
-                          trigger_price: float = 0,
-                          disclosed_quantity: int = 0,
-                          is_amo: bool = False,
-                          tag: str = '') -> Dict[str, str]:
+    async def place_order(
+            self,
+            exchange_token: str,
+            transaction_type: str,
+            quantity: int,
+            product: str,
+            validity: str,
+            order_type: str = 'MARKET',
+            price: float = 0,
+            trigger_price: float = 0,
+            disclosed_quantity: int = 0,
+            is_amo: bool = False,
+            tag: str = ''
+            ) -> Dict[str, str]:
         """
         Places an order with Upstox.
 
@@ -190,16 +192,18 @@ class UpstoxBroker(BaseBroker):
                         raise Exception(error_msg)
         except Exception as e:
             self.logger.error(f'Exception during order placement: {e}')
-            raise
-        
-    async def modify_order(self,
-                           order_id: str,
-                           quantity: int = None,
-                           price: float = None,
-                           order_type: str = None,
-                           trigger_price: float = None,
-                           disclosed_quantity: int = None,
-                           validity: str = None) -> Dict[str, str]:
+            raise   
+
+    async def modify_order(
+            self,
+            order_id: str,
+            quantity: int = None,
+            price: float = None,
+            order_type: str = None,
+            trigger_price: float = None,
+            disclosed_quantity: int = None,
+            validity: str = None
+            ) -> Dict[str, str]:
         """
         Modifies an existing order.
 
@@ -523,7 +527,11 @@ class UpstoxBroker(BaseBroker):
         except Exception as e:
             self.logger.error(f'Exception during LTP response retrieval: {e}')      
 
-    async def ohlc_quote(self, exchange_token: str, interval: str) -> Dict[str, float]:
+    async def ohlc_quote(
+            self,
+            exchange_token: str,
+            interval: str
+            ) -> Dict[str, float]:
         """
         Asynchronously retrieves Open-High-Low-Close (OHLC) data for a specified exchange token and time interval.
 
@@ -937,11 +945,13 @@ class UpstoxBroker(BaseBroker):
             self.logger.error(f'Exception during market holiday response retrieval: {e}')
             return None
 
-    async def historical_data(self,
-                              exchange_token: str,
-                              interval: str,
-                              from_date: str,
-                              to_date: str) -> pl.DataFrame:
+    async def historical_data(
+            self,
+            exchange_token: str,
+            interval: str,
+            from_date: str,
+            to_date: str
+            ) -> pl.DataFrame:
         """
         Retrieves historical candle data for a specified exchange token from Upstox.
 
@@ -1029,12 +1039,14 @@ class UpstoxBroker(BaseBroker):
             self.logger.error(f'Exception while retrieving historical data: {e}')  
             raise
 
-    async def _convert_to_polars_df(self,
-                             data: dict,
-                             exchange_token: str,
-                             interval: str,
-                             from_date: str,
-                             to_date: str) -> pl.DataFrame:
+    async def _convert_to_polars_df(
+            self,
+            data: dict,
+            exchange_token: str,
+            interval: str,
+            from_date: str,
+            to_date: str
+            ) -> pl.DataFrame:
         """
         Converts provided candle data to a Polars DataFrame with a timezone-adjusted datetime column.
         
