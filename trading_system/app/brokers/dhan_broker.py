@@ -14,7 +14,7 @@ class DhanBroker(BaseBroker):
     """
     def __init__(self, account_name: str):
         super().__init__(account_name)
-        self.broker_name = 'DhanHQ'
+        self.broker_name = 'Dhan'
         self.authenticator = DhanAuthenticator(account_name=self.account_name)
         self.client_id = None
         self.access_token = None

@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-SUPPORTED_BROKERS = ['Zerodha', 'Upstox']
+SUPPORTED_BROKERS = ['Zerodha', 'Upstox','Dhan']
 
 ZERODHA_ACCOUNTS = {
     'PMZ736' : {
@@ -37,6 +37,13 @@ UPSTOX_ACCOUNTS = {
     }
 }
 
+DHAN_ACCOUNTS = {
+    'ACC1' :{
+        "CLIENT_ID":os.getenv("DHAN_ACC1_CLIENT_ID"),
+        "ACCESS_TOKEN":os.getenv("DHAN_ACC1_ACCESS_TOKEN")
+    }
+}
+
 STRATEGY_CONFIGS = {
     'MomentumStrategyV1': {
         'PORTFOLIO_SIZE': 3,
@@ -46,3 +53,4 @@ STRATEGY_CONFIGS = {
         'SORT_ASCENDING': True ,
     }
 }
+
