@@ -12,45 +12,19 @@ class DhanAuthenticator(BaseAuthenticator):
     
     def __init__(self, account_name: str):
         self.account_name = account_name
-        self.broker_name = 'Dhan'
         self.account_config = DHAN_ACCOUNTS.get(self.account_name)
+        if not self.account_config:
+            raise ValueError(f"Account configuration not found for {account_name}")
         self.client_id = self.account_config['CLIENT_ID']
         self.access_token = self.account_config.get('ACCESS_TOKEN')
-        self.logger = get_logger(
-            main_folder_name=f'Authenticators/DhanAuthenticator/Accounts/{self.account_name}',
-            account_name=self.account_name,
-            broker_name=self.broker_name
-        )
-        self.dhan_client = None
 
     async def authenticate(self):
         """
-        Performs authentication process to obtain/validate the access token.
-
-        Returns:
-            str: Access token if authentication is successful.
-
-        Raises:
-            Exception: If authentication fails.
+        Simple authentication using stored credentials
         """
-        self.logger.info('Starting authentication process for Dhan')
-        
-        # If still no access_token, raise exception
-        if not self.access_token:
-            self.logger.error('No access token available for Dhan.')
-            raise Exception('Authentication failed: No access token provided')
-            
-        # Initialize the Dhan client with the access token
-        try:
-            self.dhan_client = dhanhq(self.client_id, self.access_token)
-            # Verify the token by making a simple API call
-            self._verify_token()
-            # Save the token for future use
-
-            return self.access_token
-        except Exception as e:
-            self.logger.error(f'Failed to authenticate with Dhan: {e}')
-            raise Exception(f'Dhan authentication failed: {str(e)}')
+        if not self.client_id or not self.access_token:
+            raise ValueError("Missing CLIENT_ID or ACCESS_TOKEN in configuration")
+        return self.client_id, self.access_token
 
     def get_auth_token(self):
         """
