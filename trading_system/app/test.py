@@ -5,9 +5,13 @@ async def main():
     broker = DhanBroker("ACC1")
     await broker.initialize()
     
-    # Get LTP for NSE equity
-    ltp = await broker.ltp_quote("NSE_EQ:500003")
-    print(f"LTP: {ltp}")
+    try:
+        # Add some debug prints
+        print("Fetching LTP...")
+        ltp = await broker.ltp_quote("NSE_EQ:11868")
+        print(f"LTP: {ltp}")
+    except Exception as e:
+        print(f"Error: {str(e)}")
 
 if __name__ == "__main__":
     asyncio.run(main())

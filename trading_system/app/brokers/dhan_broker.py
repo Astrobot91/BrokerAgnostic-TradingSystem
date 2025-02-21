@@ -69,29 +69,21 @@ class DhanBroker(BaseBroker):
 
 
     async def ltp_quote(self, exchange_token: str):
-        """
-        Fetch LTP using direct API endpoint
-        Example: 
-        Request: {"NSE_EQ":[11536], "NSE_FNO":[49081,49082]}
-        Response: {"data":{"NSE_EQ":{"11536":{"last_price":4520}}}}
-        """
         try:
-            # Parse exchange and token
             exchange, token = exchange_token.split(':')
+            token = int(token)  # Convert to int for request
             
-            # Prepare request data
             request_data = {
-                exchange: [int(token)]
+                exchange: [token]  # Send as integer
             }
-
-            # Prepare headers
+            
             headers = {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json', 
-                'access-token': str(self.access_token),
-                'client-id': str(self.client_id)
+                'access-token': self.access_token,
+                'client-id': self.client_id
             }
-
+            
             async with aiohttp.ClientSession() as session:
                 async with session.post(
                     f"{self.base_url}/v2/marketfeed/ltp",
@@ -99,12 +91,11 @@ class DhanBroker(BaseBroker):
                     json=request_data
                 ) as response:
                     data = await response.json()
-                    
                     if data.get('status') == 'success':
-                        return data['data'][exchange][token]['last_price']
+                        # Convert token back to string for response parsing
+                        return data['data'][exchange][str(token)]['last_price']
                     else:
                         raise Exception(f"Failed to get LTP: {data}")
-
         except Exception as e:
             self.logger.error(f"Error getting LTP: {e}")
             raise
