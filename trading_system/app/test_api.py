@@ -50,26 +50,26 @@ async def async_test():
         except Exception as e:
             print(f"OHLC Error: {str(e)}")
 
-async def load_test():
-    """Simple load test - multiple concurrent requests"""
-    print("\n=== Running Load Test ===")
+# async def load_test():
+#     """Simple load test - multiple concurrent requests"""
+#     print("\n=== Running Load Test ===")
     
-    async with aiohttp.ClientSession() as session:
-        # Make 5 concurrent requests to each endpoint
-        ltp_tasks = [session.get("http://localhost:8000/ltp/NSE_EQ/10099") for _ in range(5)]
-        ohlc_tasks = [session.get("http://localhost:8000/ohlc/NSE_EQ/10099") for _ in range(5)]
+#     async with aiohttp.ClientSession() as session:
+#         # Make 5 concurrent requests to each endpoint
+#         ltp_tasks = [session.get("http://localhost:8000/ltp/NSE_EQ/10099") for _ in range(5)]
+#         ohlc_tasks = [session.get("http://localhost:8000/ohlc/NSE_EQ/10099") for _ in range(5)]
         
-        print("\nTesting multiple LTP requests...")
-        start_time = datetime.now()
-        responses = await asyncio.gather(*ltp_tasks)
-        end_time = datetime.now()
-        print(f"Time taken for 5 LTP requests: {(end_time - start_time).total_seconds()} seconds")
+#         print("\nTesting multiple LTP requests...")
+#         start_time = datetime.now()
+#         responses = await asyncio.gather(*ltp_tasks)
+#         end_time = datetime.now()
+#         print(f"Time taken for 5 LTP requests: {(end_time - start_time).total_seconds()} seconds")
         
-        print("\nTesting multiple OHLC requests...")
-        start_time = datetime.now()
-        responses = await asyncio.gather(*ohlc_tasks)
-        end_time = datetime.now()
-        print(f"Time taken for 5 OHLC requests: {(end_time - start_time).total_seconds()} seconds")
+#         print("\nTesting multiple OHLC requests...")
+#         start_time = datetime.now()
+#         responses = await asyncio.gather(*ohlc_tasks)
+#         end_time = datetime.now()
+#         print(f"Time taken for 5 OHLC requests: {(end_time - start_time).total_seconds()} seconds")
 
 async def main():
     # Run synchronous tests
@@ -78,8 +78,8 @@ async def main():
     # Run asynchronous tests
     await async_test()
     
-    # Run load test
-    await load_test()
+    # # Run load test
+    # await load_test()
 
 if __name__ == "__main__":
     print("Starting API Tests...")
