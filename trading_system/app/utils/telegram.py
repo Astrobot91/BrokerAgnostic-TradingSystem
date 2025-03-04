@@ -11,7 +11,7 @@ def message(chat_id, message):
     requests.post(apiURL, data=payload)
 
 def broadcast_signal(signal):
-    chat_ids = ['1134875199', '551406120', '2034011458', '6581999109']
+    chat_ids = ['1134875199', '551406120', '2034011458', '6581999109', '1495634587']
     for chat_id in chat_ids:
         message(chat_id, signal)
 

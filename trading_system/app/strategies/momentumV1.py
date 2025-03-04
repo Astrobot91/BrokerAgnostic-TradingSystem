@@ -102,6 +102,7 @@ class MomentumStrategyV1(BaseStrategy):
                 NOTE: Currently using UNSAFE BALANCE!
                 '''
                 safe_balance, unsafe_balance = await self._check_exits()  
+                print(unsafe_balance)
                 open_positions = await self.portfolio_manager.load_positions(status='open')
                 no_of_open_positions = len(open_positions)
                 qualified_futures, nearest_expiry = await self._get_recent_expiry_futures()
@@ -237,10 +238,12 @@ class MomentumStrategyV1(BaseStrategy):
             groups = master_file.group_by(['year', 'month']).agg(
                 pl.col('expiry_date').max().alias('max_expiry_date')
             )
+            print(groups)
             nearest_expiry_row = groups.filter(
                 (pl.col('year') == date.today().year) &
                 (pl.col('month') == date.today().month)
             )
+            print(nearest_expiry_row)
             nearest_expiry = nearest_expiry_row.select(pl.col('max_expiry_date')).item(0, 0)
             futures_slice = master_file_slice.filter(pl.col('expiry') == nearest_expiry)
 
@@ -305,7 +308,7 @@ class MomentumStrategyV1(BaseStrategy):
                 trading_symbol = row_dict['trading_symbol']
                 exchange_token = row_dict['exchange_token']
                 exchange = row_dict['exchange']
-                order_type = 'MARKET'
+                order_type = 'LIMIT'
                 transaction_type = 'BUY'
                 product = 'D'
                 validity = 'DAY'
@@ -387,8 +390,10 @@ class MomentumStrategyV1(BaseStrategy):
                             product=position['product']
                             )
                         if order_is_valid:
+                            ltp_price = await self.brokerdatafeed.ltp_quote(exchange_token=position['exchange_token'])
                             order_response = await self.trade_executor.place_order(
                                 exchange_token=position['exchange_token'],
+                                price=ltp_price,
                                 transaction_type=position['exit_transaction_type'],
                                 quantity=position['quantity'],
                                 product=position['product'],
@@ -429,9 +434,11 @@ class MomentumStrategyV1(BaseStrategy):
                             product=position['product']
                             )
                         if order_is_valid:
+                            ltp_price = await self.brokerdatafeed.ltp_quote(exchange_token=position["exchange_token"])
                             order_response = await self.trade_executor.place_order(
                                 exchange_token=position['exchange_token'],
                                 transaction_type=position['entry_transaction_type'],
+                                price=ltp_price,
                                 quantity=position['quantity'],
                                 product=position['product'],
                                 validity=position['validity'],
@@ -533,7 +540,7 @@ class MomentumStrategyV1(BaseStrategy):
                 self.logger.info(f"Expected Account Balance - Safe Balance: {safe_balance}, Unsafe Balance: {unsafe_balance}.")
                 return safe_balance, unsafe_balance
             else:
-                return 0.0, 0.0
+                return available_balance, available_balance
 
         except Exception as e:
             error_msg = f'Error occured while processing exits: {e}'
@@ -818,6 +825,6 @@ class MomentumStrategyV1(BaseStrategy):
         ist = ZoneInfo('Asia/Kolkata')
         current_time = datetime.now(ist)
         evening_start_time = current_time.replace(hour=16, minute=0, second=0, microsecond=0)
-        evening_end_time = current_time.replace(hour=18, minute=0, second=0, microsecond=0)
+        evening_end_time = current_time.replace(hour=23, minute=0, second=0, microsecond=0)
 
         return evening_start_time <= current_time < evening_end_time
